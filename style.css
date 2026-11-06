@@ -148,6 +148,17 @@ body.dark-theme .mural-cracks {
   background-image: repeating-linear-gradient(135deg, #ffd700 0px, #ffd700 1px, transparent 1px, transparent 60px);
 }
 
+/* 松明の火の粉＆黄金の砂塵パーティクルCanvas */
+.mural-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* 松明のゆらめき（トーチグロー） */
 .torch-glow {
   position: fixed;
@@ -246,7 +257,14 @@ body.dark-theme .mural-cracks {
 .winged-disk-svg {
   width: 100%;
   max-height: 52px;
-  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3));
+  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.35));
+  animation: wingedFloat 5s ease-in-out infinite alternate;
+}
+
+@keyframes wingedFloat {
+  0% { transform: translateY(0) scale(1); filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3)); }
+  50% { transform: translateY(-3px) scale(1.015); filter: drop-shadow(0 8px 18px rgba(212, 175, 55, 0.55)); }
+  100% { transform: translateY(0) scale(1); filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3)); }
 }
 
 /* セクション間の壁画フリーズ仕切り */
@@ -647,8 +665,49 @@ body.dark-theme .ancient-mural-tableau {
 .icon-button:hover {
   border-color: var(--gold);
   box-shadow: 0 0 12px var(--gold-glow);
-  transform: rotate(30deg);
+  transform: rotate(15deg);
 }
+
+/* 古代神殿BGMボタン＆イコライザーアニメーション */
+.bgm-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.bgm-button.playing {
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+.bgm-equalizer {
+  display: none;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 15px;
+}
+
+.bgm-button.playing .bgm-equalizer {
+  display: inline-flex;
+}
+
+.bgm-button.playing #bgm-icon {
+  display: none;
+}
+
+.eq-bar {
+  width: 3px;
+  background: var(--gold);
+  border-radius: 1px;
+}
+
+.bar-1 { height: 40%; animation: eqJump1 0.7s ease-in-out infinite alternate; }
+.bar-2 { height: 90%; animation: eqJump2 0.5s ease-in-out infinite alternate; }
+.bar-3 { height: 60%; animation: eqJump3 0.85s ease-in-out infinite alternate; }
+
+@keyframes eqJump1 { 0% { height: 25%; } 100% { height: 100%; } }
+@keyframes eqJump2 { 0% { height: 85%; } 100% { height: 25%; } }
+@keyframes eqJump3 { 0% { height: 35%; } 100% { height: 95%; } }
 
 .mobile-toggle {
   display: none;

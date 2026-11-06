@@ -18,9 +18,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="egypt-theme">
-  <!-- 砂岩と石灰岩の風化テクスチャ背景オーバレイ -->
+  <!-- 砂岩と石灰岩の風化テクスチャ背景オーバレイ & 松明の火の粉パーティクル -->
   <div class="sand-texture" aria-hidden="true"></div>
   <div class="mural-cracks" aria-hidden="true"></div>
+  <canvas id="mural-particles" class="mural-particles" aria-hidden="true"></canvas>
   <div class="torch-glow torch-left" aria-hidden="true"></div>
   <div class="torch-glow torch-right" aria-hidden="true"></div>
 
@@ -89,6 +90,15 @@
       </nav>
 
       <div class="nav-actions">
+        <!-- 古代エジプト風BGMトグルボタン -->
+        <button id="bgm-toggle" class="icon-button bgm-button" aria-label="古代エジプト風BGMの再生/停止" title="古代エジプト神殿BGM (再生/停止)">
+          <i class="fa-solid fa-volume-xmark" id="bgm-icon"></i>
+          <span class="bgm-equalizer" aria-hidden="true">
+            <span class="eq-bar bar-1"></span>
+            <span class="eq-bar bar-2"></span>
+            <span class="eq-bar bar-3"></span>
+          </span>
+        </button>
         <!-- 昼夜の儀式切り替え（ラーの陽光 ⇄ 玄室の松明夜） -->
         <button id="theme-toggle" class="icon-button" aria-label="昼夜の儀式を切り替える" title="昼夜の儀式（テーマ切替）">
           <i class="fa-solid fa-sun"></i>
