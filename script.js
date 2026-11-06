@@ -1,6 +1,6 @@
 /**
  * Ancient Egyptian Mural Portfolio Scripts
- * Yoshika Fukuyama - Digital Scribe & Wayfarer
+ * Yossy - Digital Scribe & Wayfarer
  */
 
 document.addEventListener('DOMContentLoaded', () => {
