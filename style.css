@@ -129,6 +129,25 @@ body.egypt-theme {
   opacity: 0.8;
 }
 
+/* 壁画の風化・微細クラック（ひび割れ）オーバーレイ */
+.mural-cracks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 1px, transparent 60px),
+                    repeating-linear-gradient(45deg, #000 0px, #000 1px, transparent 1px, transparent 80px);
+}
+
+body.dark-theme .mural-cracks {
+  opacity: 0.08;
+  background-image: repeating-linear-gradient(135deg, #ffd700 0px, #ffd700 1px, transparent 1px, transparent 60px);
+}
+
 /* 松明のゆらめき（トーチグロー） */
 .torch-glow {
   position: fixed;
@@ -177,26 +196,220 @@ body.egypt-theme {
 }
 
 /* --------------------------------------------------------------------------
-   3. Hieroglyph Borders & Stone Relief Elements
+   3. Hieroglyph Borders & Mural Friezes
    -------------------------------------------------------------------------- */
-.hieroglyph-border {
+/* 最上部フリーズ装飾帯（連続スクロール） */
+.hieroglyph-frieze {
   width: 100%;
-  height: 32px;
+  height: 34px;
   background: var(--slab-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   color: var(--bg-main);
   font-size: 1.15rem;
-  letter-spacing: 0.5rem;
-  user-select: none;
+  letter-spacing: 0.6rem;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.top-border {
   position: relative;
   z-index: 101;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.frieze-track {
+  display: flex;
+  white-space: nowrap;
+  animation: friezeScroll 35s linear infinite;
+}
+
+.frieze-track span {
+  display: inline-block;
+  padding-right: 50px;
+}
+
+@keyframes friezeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 有翼日輪（Winged Sun Disk）神殿バナー */
+.winged-disk-banner {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto -20px;
+  padding: 10px 20px 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.winged-disk-svg {
+  width: 100%;
+  max-height: 52px;
+  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3));
+}
+
+/* セクション間の壁画フリーズ仕切り */
+.temple-frieze-divider {
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+}
+
+.frieze-motif {
+  font-size: 1.4rem;
+  letter-spacing: 0.8rem;
+  color: var(--gold);
+  opacity: 0.8;
+  padding: 8px 30px;
+  border-top: 2px solid var(--slab-border);
+  border-bottom: 2px solid var(--slab-border);
+  background: var(--slab-bg);
+  box-shadow: var(--slab-shadow);
+  border-radius: 4px;
+  text-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* ヒーロー壁画タブロー（書記官と神トートの対面壁画） */
+.ancient-mural-tableau {
+  max-width: 440px !important;
+  background: #f4ecdc !important;
+  border: 4px solid var(--gold) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35), inset 0 0 35px rgba(184, 134, 11, 0.25) !important;
+}
+
+body.dark-theme .ancient-mural-tableau {
+  background: #18120d !important;
+}
+
+.stone-wall-mural {
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 80%),
+              repeating-linear-gradient(45deg, rgba(100, 70, 30, 0.02) 0px, rgba(100, 70, 30, 0.02) 2px, transparent 2px, transparent 8px);
+  padding: 18px 14px 20px !important;
+}
+
+.tableau-hieroglyphs {
+  font-size: 1.15rem;
+  letter-spacing: 0.5rem;
+  color: var(--gold);
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--slab-border);
+  margin-bottom: 12px;
+}
+
+.tableau-mural-art {
+  width: 100%;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
+  transition: var(--transition);
+}
+
+.full-mural-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ancient-mural-tableau:hover .tableau-mural-art {
+  transform: scale(1.02);
+}
+
+.tableau-footer-seal {
+  font-family: var(--font-decor);
+  font-size: 0.72rem;
+  color: var(--turquoise);
+  letter-spacing: 0.2em;
+  margin-top: 10px;
+}
+
+/* 守護レリーフ小枠 */
+.slab-guardian-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px dashed var(--turquoise);
+  border-radius: 20px;
+  color: var(--turquoise);
+}
+
+.guardian-icon {
+  font-size: 1.3rem;
+}
+
+.guardian-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+/* 各プロジェクト専用の壁画SVGアートヘッダー */
+.project-mural-art {
+  position: relative;
+  height: 195px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.card-mural-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.5s ease;
+}
+
+.relief-card:hover .card-mural-svg {
+  transform: scale(1.05);
+}
+
+/* 太陽の舟（Solar Bark）航海壁画バナー */
+.solar-bark-mural {
+  margin-bottom: 40px;
+  padding: 24px 20px 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--slab-bg) 0%, rgba(20, 77, 107, 0.08) 100%);
+}
+
+.bark-svg {
+  width: 100%;
+  max-height: 140px;
+  display: block;
+}
+
+.bark-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.travel-mural-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--lapis-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px var(--turquoise-glow);
+  border: 2px solid var(--gold);
 }
 
 /* 石版（Stone Slab）カードスタイル */
@@ -851,7 +1064,7 @@ body.egypt-theme {
 }
 
 /* --------------------------------------------------------------------------
-   7. Skills Section (Sacred Slabs & Hieroglyph Meters)
+   7. Skills Section (Sacred Slabs & Structured Tech Cards)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
@@ -860,8 +1073,8 @@ body.egypt-theme {
 }
 
 .skill-slab {
-  padding: 36px 26px;
-  text-align: center;
+  padding: 34px 26px;
+  text-align: left;
 }
 
 .slab-badge {
@@ -872,142 +1085,211 @@ body.egypt-theme {
   border: 1px solid var(--turquoise);
   color: var(--turquoise);
   border-radius: 20px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .skill-category-title {
   font-family: var(--font-decor);
   font-size: 1.35rem;
   color: var(--gold);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.category-summary {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
 }
 
 .hieroglyph-divider {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-dim);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   letter-spacing: 0.5em;
+  text-align: center;
 }
 
-.skill-meters {
+.skill-cards-inner {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  text-align: left;
+  gap: 16px;
 }
 
-.meter-head {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.92rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.meter-glyph {
-  font-family: var(--font-mono);
-  color: var(--turquoise);
-}
-
-.meter-track {
-  width: 100%;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.08);
+.tech-item {
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.03);
   border: 1px solid var(--slab-border);
   border-radius: 4px;
-  overflow: hidden;
+  transition: var(--transition);
 }
 
-body.dark-theme .meter-track {
+body.dark-theme .tech-item {
   background: rgba(0, 0, 0, 0.35);
 }
 
-.meter-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--turquoise) 0%, var(--gold) 100%);
-  border-radius: 3px;
-  transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+.tech-item:hover {
+  border-color: var(--gold);
+  transform: translateX(3px);
 }
 
-.amulet-wrapper {
-  margin-top: 50px;
+.tech-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-name-row strong {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.tech-level {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--turquoise);
+  background: var(--turquoise-soft);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.tech-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* 開発環境・IDEバー */
+.tool-id-bar {
+  margin-top: 36px;
+  padding: 22px 28px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.amulet-title {
-  font-family: var(--font-serif);
-  font-size: 0.92rem;
+.tool-title {
+  font-family: var(--font-decor);
+  font-size: 0.95rem;
   color: var(--gold);
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
-.amulet-list {
+.ankh-icon {
+  color: var(--turquoise);
+}
+
+.tool-pills {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.amulet {
-  font-size: 0.85rem;
+.tool-pill {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
   padding: 6px 14px;
   border: 1px solid var(--slab-border);
   background: var(--slab-bg);
   border-radius: 20px;
   color: var(--text-muted);
   box-shadow: var(--slab-shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   transition: var(--transition);
 }
 
-.amulet:hover {
+.tool-pill:hover {
   border-color: var(--gold);
   color: var(--gold);
   transform: translateY(-2px);
 }
 
-/* --------------------------------------------------------------------------
-   8. Works Section (Relief Tablets)
-   -------------------------------------------------------------------------- */
-.egypt-filter {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.filter-tab {
-  padding: 8px 22px;
-  font-family: var(--font-serif);
-  font-size: 0.92rem;
-  font-weight: 700;
-  background: var(--slab-bg);
-  border: 1px solid var(--slab-border);
-  color: var(--text-muted);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.filter-tab:hover,
-.filter-tab.active {
-  background: var(--gold);
-  color: #1a1208;
+.tool-pill.status-learning {
+  border-style: dashed;
+  color: var(--gold);
   border-color: var(--gold);
-  box-shadow: 0 4px 14px var(--gold-glow);
+  background: rgba(212, 175, 55, 0.08);
 }
 
-.works-grid {
+/* --------------------------------------------------------------------------
+   8. Works Section (Relief Tablets & Featured Projects)
+   -------------------------------------------------------------------------- */
+.works-grid.egypt-project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 30px;
+}
+
+.featured-project {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-project .relief-body {
+  padding: 28px 24px;
+}
+
+.project-tagline {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: var(--turquoise);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.project-highlights {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--slab-border);
+}
+
+.project-highlights h4 {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.project-highlights ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-highlights li {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  position: relative;
+  padding-left: 14px;
+}
+
+.project-highlights li::before {
+  content: '𓏤';
+  position: absolute;
+  left: 0;
+  color: var(--turquoise);
+  font-weight: bold;
+}
+
+.project-highlights li strong {
+  color: var(--text-main);
 }
 
 .relief-card {

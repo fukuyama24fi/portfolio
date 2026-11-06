@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>古代エジプト壁画録 | Yoshika Fukuyama Portfolio</title>
-  <meta name="description" content="悠久のナイルの風をまとう、古代エジプト壁画風ポートフォリオ。デジタル書記官が刻む制作物と旅の記録。">
+  <meta name="description" content="悠久のナイルの風をまとうエジプト壁画風ポートフォリオ。知恵の神トートとデジタル書記官が刻む、LLMマルチエージェント・リアルタイム通信・旅の壁画録。">
 
   <!-- Google Fonts: 古代石碑・壁画の格調を高めるフォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Shippori+Mincho:wght@400;600;800&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Shippori+Mincho:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,41 +18,79 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="egypt-theme">
-  <!-- パピルスと砂岩のテクスチャ背景オーバレイ -->
+  <!-- 砂岩と石灰岩の風化テクスチャ背景オーバレイ -->
   <div class="sand-texture" aria-hidden="true"></div>
+  <div class="mural-cracks" aria-hidden="true"></div>
   <div class="torch-glow torch-left" aria-hidden="true"></div>
   <div class="torch-glow torch-right" aria-hidden="true"></div>
 
-  <!-- 最上部の壁画装飾ボーダー（ヒエログリフ・フリーズ） -->
-  <div class="hieroglyph-border top-border" aria-hidden="true">
-    <span>𓋹</span><span>𓍯</span><span>𓊹</span><span>𓆃</span><span>𓁀</span><span>𓃠</span><span>𓅓</span><span>𓏤</span><span>𓌃</span><span>𓎛</span><span>𓋹</span><span>𓍯</span><span>𓊹</span><span>𓆃</span><span>𓁀</span><span>𓃠</span><span>𓅓</span><span>𓏤</span><span>𓌃</span><span>𓎛</span>
+  <!-- 最上部の壁画装飾ボーダー（ヒエログリフ・フリーズ帯） -->
+  <div class="hieroglyph-frieze" aria-hidden="true">
+    <div class="frieze-track">
+      <span>𓋹 𓍯 𓊹 𓆃 𓁀 𓃠 𓅓 𓏤 𓌃 𓎛 𓆣 𓈓 𓊝 𓇳 𓁐 𓋹 𓍯 𓊹 𓆃 𓁀 𓃠 𓅓 𓏤 𓌃 𓎛 𓆣 𓈓 𓊝 𓇳 𓁐</span>
+      <span>𓋹 𓍯 𓊹 𓆃 𓁀 𓃠 𓅓 𓏤 𓌃 𓎛 𓆣 𓈓 𓊝 𓇳 𓁐 𓋹 𓍯 𓊹 𓆃 𓁀 𓃠 𓅓 𓏤 𓌃 𓎛 𓆣 𓈓 𓊝 𓇳 𓁐</span>
+    </div>
   </div>
 
-  <!-- ナビゲーションバー（神殿の梁風） -->
+  <!-- 有翼日輪（Winged Sun Disk of Horus）神殿バナー -->
+  <div class="winged-disk-banner" aria-hidden="true">
+    <svg viewBox="0 0 800 60" class="winged-disk-svg">
+      <defs>
+        <linearGradient id="wingGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f6d365" />
+          <stop offset="50%" stop-color="#d4af37" />
+          <stop offset="100%" stop-color="#aa7c11" />
+        </linearGradient>
+        <linearGradient id="wingTurquoise" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0d9488" />
+          <stop offset="50%" stop-color="#2dd4bf" />
+          <stop offset="100%" stop-color="#0d9488" />
+        </linearGradient>
+      </defs>
+      <!-- 左翼 -->
+      <path d="M400 30 Q280 5 80 15 Q200 45 375 35 Z" fill="url(#wingTurquoise)" opacity="0.85"/>
+      <path d="M400 30 Q290 12 120 22 Q210 40 375 33 Z" fill="url(#wingGold)"/>
+      <path d="M400 30 Q310 18 160 28 Q230 38 375 32 Z" fill="#b85d3b" opacity="0.8"/>
+      <!-- 右翼 -->
+      <path d="M400 30 Q520 5 720 15 Q600 45 425 35 Z" fill="url(#wingTurquoise)" opacity="0.85"/>
+      <path d="M400 30 Q510 12 680 22 Q590 40 425 33 Z" fill="url(#wingGold)"/>
+      <path d="M400 30 Q490 18 640 28 Q570 38 425 32 Z" fill="#b85d3b" opacity="0.8"/>
+      <!-- 中央の日輪とウラエウス聖蛇 -->
+      <circle cx="400" cy="30" r="16" fill="url(#wingGold)" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="400" cy="30" r="11" fill="#c86446"/>
+      <!-- 聖蛇2匹 -->
+      <path d="M386 28 Q375 20 376 34 Q380 44 388 40" stroke="#d4af37" stroke-width="2.5" fill="none"/>
+      <circle cx="376" cy="22" r="2.5" fill="#d4af37"/>
+      <path d="M414 28 Q425 20 424 34 Q420 44 412 40" stroke="#d4af37" stroke-width="2.5" fill="none"/>
+      <circle cx="424" cy="22" r="2.5" fill="#d4af37"/>
+    </svg>
+  </div>
+
+  <!-- ナビゲーションバー（神殿列柱風） -->
   <header class="temple-header" id="header">
     <div class="container nav-container">
       <a href="#hero" class="egypt-logo">
         <span class="ankh-symbol">☥</span>
         <div class="logo-titles">
           <span class="logo-main">YOSHIKA</span>
-          <span class="logo-sub">SCRIBE & WAYFARER</span>
+          <span class="logo-sub">SCRIBE OF THE TEMPLE</span>
         </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#about" class="nav-link"><span class="nav-glyph">𓁀</span> 我が素性 (About)</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link"><span class="nav-glyph">𓌃</span> 術と道具 (Skills)</a></li>
-          <li class="nav-item"><a href="#works" class="nav-link"><span class="nav-glyph">𓊹</span> 石碑・作品 (Works)</a></li>
-          <li class="nav-item"><a href="#travel" class="nav-link"><span class="nav-glyph">𓊝</span> 旅路の記録 (Travel)</a></li>
-          <li class="nav-item"><a href="#experience" class="nav-link"><span class="nav-glyph">𓍯</span> 年代記 (Chronicle)</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><span class="nav-glyph">𓁀</span> 素性・強み (About)</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><span class="nav-glyph">𓌃</span> 術と道具 (Tech Stack)</a></li>
+          <li class="nav-item"><a href="#works" class="nav-link"><span class="nav-glyph">𓊹</span> 開発実績 (Projects)</a></li>
+          <li class="nav-item"><a href="#travel" class="nav-link"><span class="nav-glyph">𓊝</span> 旅路の壁画 (Travel)</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link"><span class="nav-glyph">𓍯</span> 年代記 (Timeline)</a></li>
           <li class="nav-item"><a href="#contact" class="nav-link nav-btn"><span class="nav-glyph">𓂀</span> 伝令 (Contact)</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <!-- 砂嵐 / 松明エフェクト切り替え -->
-        <button id="theme-toggle" class="icon-button" aria-label="日輪・月夜の儀式を切り替える" title="昼夜の儀式">
+        <!-- 昼夜の儀式切り替え（ラーの陽光 ⇄ 玄室の松明夜） -->
+        <button id="theme-toggle" class="icon-button" aria-label="昼夜の儀式を切り替える" title="昼夜の儀式（テーマ切替）">
           <i class="fa-solid fa-sun"></i>
         </button>
         <!-- モバイルハンバーガーボタン -->
@@ -66,112 +104,160 @@
   </header>
 
   <main>
-    <!-- ヒーローセクション：壁画レリーフ風のメインビジュアル -->
+    <!-- ヒーローセクション：本格古代壁画パノラマ -->
     <section class="hero section" id="hero">
       <div class="container hero-container">
         <div class="hero-content reveal">
           <!-- カルトゥーシュ枠（ファラオの銘板） -->
           <div class="cartouche-badge">
             <span class="glyph-ankh">☥</span>
-            <span class="cartouche-text">DIGITAL SCRIBE OF MODERN AGE</span>
+            <span class="cartouche-text">KEEPER OF SACRED CODE & TRAVEL</span>
             <span class="glyph-ankh">☥</span>
           </div>
 
           <h1 class="hero-title">
-            悠久のナイルの如く、<br>
-            <span class="gold-gradient-text">美しき秩序とコード</span>を<br>
-            石板に刻む者。
+            神託の如き知性を紡ぎ、<br>
+            <span class="gold-gradient-text">悠久の壁画にコード</span>を<br>
+            刻みしデジタル書記官。
           </h1>
 
           <p class="hero-description">
-            古代エジプトの書記官（Scribe）の精神を宿し、現代のデジタル空間に秩序と美を構築するクリエイター。<br>
-            未知の大地を巡る<strong>「旅」</strong>を愛し、エジプシャンブルーと碧緑（ターコイズ）の風をWebフロントエンドとUIデザインに注ぎ込みます。
+            古代エジプトの神託を石板に刻んだ書記官（スクライブ）の誇りを胸に。<br>
+            <strong>PythonによるLLMマルチエージェント自律協調システム</strong>や、<strong>Socket.IOリアルタイム通信バックエンド</strong>、PostgreSQLクラウドDB連携を構築。<br>
+            未知の大地を巡る<strong>「旅」</strong>の澄んだ青緑の風を、モダンなデジタルアーキテクチャに吹き込みます。
           </p>
 
           <div class="hero-buttons">
             <a href="#works" class="btn btn-egypt-gold">
               <i class="fa-solid fa-scroll"></i>
-              <span>刻まれし実績を観る</span>
+              <span>奉納されし開発壁画を見る</span>
             </a>
-            <a href="#travel" class="btn btn-egypt-lapis">
-              <i class="fa-solid fa-compass"></i>
-              <span>旅路の記録</span>
+            <a href="#skills" class="btn btn-egypt-lapis">
+              <i class="fa-solid fa-microchip"></i>
+              <span>修得せし技術の石柱</span>
             </a>
           </div>
 
           <!-- 壁画風オーナメント -->
           <div class="mural-divider">
             <span class="divider-line"></span>
-            <span class="divider-icon">𓋹 𓂀 𓆃</span>
+            <span class="divider-icon">𓋹 𓂀 𓆃 𓊹 𓆣</span>
             <span class="divider-line"></span>
           </div>
         </div>
 
-        <!-- ヒーロービジュアル：エジプト壁画風肖像フレーム -->
+        <!-- ヒーロービジュアル：本格的古代エジプト壁画シーン（書記官と知恵の神トート） -->
         <div class="hero-visual reveal delay-1">
-          <div class="mural-frame">
-            <!-- 四隅の装飾金具風 -->
+          <div class="mural-frame ancient-mural-tableau">
             <div class="corner-ornament top-l"></div>
             <div class="corner-ornament top-r"></div>
             <div class="corner-ornament btm-l"></div>
             <div class="corner-ornament btm-r"></div>
 
-            <div class="mural-inner">
-              <div class="sun-disk-halo"></div>
-              
-              <!-- 壁画風の横顔シルエット・イラスト -->
-              <div class="pharaoh-portrait">
-                <svg viewBox="0 0 200 240" class="portrait-svg" xmlns="http://www.w3.org/2000/svg">
-                  <!-- エジプト壁画風の幾何学パターン＆ホルス・書記官のシンボリック造形 -->
+            <div class="mural-inner stone-wall-mural">
+              <!-- 上部ヒエログリフ帯 -->
+              <div class="tableau-hieroglyphs">
+                𓊹 𓌃 𓋹 𓁀 𓍯 𓎛 𓆃 𓏤 𓆣 𓈓
+              </div>
+
+              <!-- 本格的エジプト壁画SVG：書記官とトキ頭の知恵神トートの対面シーン -->
+              <div class="tableau-mural-art">
+                <svg viewBox="0 0 360 260" class="full-mural-svg" xmlns="http://www.w3.org/2000/svg">
                   <defs>
-                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#f6d365" />
-                      <stop offset="50%" stop-color="#fda085" />
-                      <stop offset="100%" stop-color="#d4af37" />
+                    <linearGradient id="goldPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fae082" />
+                      <stop offset="50%" stop-color="#d4af37" />
+                      <stop offset="100%" stop-color="#9a7215" />
                     </linearGradient>
-                    <linearGradient id="lapisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="lapisPlate" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stop-color="#144d6b" />
                       <stop offset="50%" stop-color="#0f766e" />
                       <stop offset="100%" stop-color="#0d9488" />
                     </linearGradient>
+                    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#d9825b" />
+                      <stop offset="100%" stop-color="#b85d3b" />
+                    </linearGradient>
                   </defs>
-                  
-                  <!-- 日輪とウラエウス（蛇）の冠 -->
-                  <circle cx="100" cy="50" r="32" fill="url(#goldGrad)" />
-                  <path d="M100 18 Q105 5 100 2" stroke="#d4af37" stroke-width="4" fill="none"/>
-                  
-                  <!-- ネメス頭巾（青と金の縞） -->
-                  <path d="M55 70 Q100 45 145 70 L160 145 Q150 165 130 170 L130 120 L70 120 L70 170 Q50 165 40 145 Z" fill="url(#lapisGrad)" stroke="#d4af37" stroke-width="2"/>
-                  <!-- 縞模様 -->
-                  <path d="M60 85 L140 85 M65 100 L135 100 M68 115 L132 115" stroke="#f6d365" stroke-width="3" stroke-linecap="round"/>
-                  
-                  <!-- 壁画特有の横顔輪郭 -->
-                  <path d="M85 85 L112 85 L118 100 L110 106 L118 120 L102 124 L96 150 L80 150 Z" fill="#e8c298" stroke="#7a4b26" stroke-width="2"/>
-                  
-                  <!-- ホルスの目（アイメイク） -->
-                  <g transform="translate(102, 92) scale(0.65)">
-                    <path d="M0 8 Q12 -2 24 8 Q12 18 0 8 Z" fill="#241c14" stroke="#d4af37" stroke-width="1.5"/>
-                    <circle cx="12" cy="8" r="4" fill="#0d9488"/>
-                    <path d="M24 8 L32 16 M12 18 L12 28 Q8 32 4 28" stroke="#241c14" stroke-width="2.5" fill="none"/>
+
+                  <!-- 背景の日輪光彩 -->
+                  <circle cx="180" cy="50" r="38" fill="url(#goldPlate)" opacity="0.35"/>
+                  <circle cx="180" cy="50" r="22" fill="#c86446" opacity="0.8"/>
+
+                  <!-- 中央上部：生命の鍵アンク ☥ 浮彫り -->
+                  <g transform="translate(168, 85) scale(0.7)">
+                    <circle cx="17" cy="12" r="10" fill="none" stroke="#d4af37" stroke-width="4"/>
+                    <path d="M5 26 L29 26 M17 22 L17 46" stroke="#d4af37" stroke-width="4" stroke-linecap="round"/>
                   </g>
-                  
-                  <!-- 首飾り（ウェセク・襟飾り） -->
-                  <path d="M60 160 Q100 190 140 160 L145 185 Q100 220 55 185 Z" fill="url(#goldGrad)" stroke="#134e4a" stroke-width="3"/>
-                  <path d="M68 172 Q100 198 132 172" stroke="#0d9488" stroke-width="4" stroke-dasharray="4 4"/>
+
+                  <!-- 左側：知恵と書記の神トート（Thoth / トキの頭） -->
+                  <g class="mural-figure god-thoth">
+                    <!-- トキの頭と長い嘴 -->
+                    <path d="M70 70 Q95 72 105 85 Q90 92 78 88 L52 102 Q68 94 74 90 Q65 92 60 98" fill="#1e1814" stroke="#d4af37" stroke-width="1.5"/>
+                    <path d="M100 82 Q125 105 135 125 Q115 110 95 90" fill="#2d2419" stroke="#b8860b" stroke-width="1.2"/>
+                    <!-- 三日月の冠 -->
+                    <path d="M72 65 Q62 50 72 40 Q82 50 72 65 Z" fill="url(#goldPlate)"/>
+                    <circle cx="72" cy="52" r="6" fill="#f4ecd8"/>
+                    <!-- 首飾り（ウェセク襟） -->
+                    <path d="M68 95 Q85 115 102 95 L106 112 Q85 130 64 112 Z" fill="url(#lapisPlate)" stroke="#d4af37" stroke-width="1"/>
+                    <!-- 胴体（古代壁画特有の正面向き胸部・側面向き下半身） -->
+                    <path d="M66 112 L104 112 L98 165 L72 165 Z" fill="url(#skinTone)"/>
+                    <!-- 腰布（シェンディト） -->
+                    <path d="M70 162 L100 162 L108 200 L62 200 Z" fill="#f4ecd8" stroke="#d4af37" stroke-width="2"/>
+                    <path d="M85 162 L85 200" stroke="#0d9488" stroke-width="3"/>
+                    <!-- 脚部（横向き歩行ポーズ） -->
+                    <path d="M74 200 L74 245 L86 245 L86 200" fill="url(#skinTone)"/>
+                    <path d="M92 200 L92 245 L104 245 L104 200" fill="url(#skinTone)"/>
+                    <!-- 筆とパピルス板を持つ腕 -->
+                    <path d="M96 120 L128 140 L135 130" stroke="url(#skinTone)" stroke-width="7" stroke-linecap="round" fill="none"/>
+                    <rect x="126" y="120" width="8" height="28" rx="2" fill="url(#goldPlate)" transform="rotate(-20 126 120)"/>
+                    <!-- 銘文 -->
+                    <text x="50" y="35" font-family="'Cinzel', serif" font-size="10" fill="#d4af37">THOTH</text>
+                  </g>
+
+                  <!-- 右側：デジタル書記官（Scribe - 福山 佳）座像ポーズ -->
+                  <g class="mural-figure scribe-yoshika">
+                    <!-- ネメス頭巾と横顔 -->
+                    <path d="M280 65 Q255 45 235 68 L228 105 Q240 120 252 118 L252 95 L285 95 L285 118 Q298 120 310 105 Z" fill="url(#lapisPlate)" stroke="#d4af37" stroke-width="1.5"/>
+                    <path d="M242 80 L280 80 M245 92 L275 92" stroke="#f6d365" stroke-width="2"/>
+                    <!-- 顔（横顔） -->
+                    <path d="M248 78 L232 78 L226 90 L234 94 L228 106 L242 108 L246 122 L256 122 Z" fill="#e8c298" stroke="#7a4b26" stroke-width="1.5"/>
+                    <!-- ホルスの目（アイライン） -->
+                    <path d="M236 84 Q242 78 248 84 Q242 90 236 84 Z" fill="#14100c"/>
+                    <circle cx="242" cy="84" r="2" fill="#0d9488"/>
+                    <!-- 首飾り -->
+                    <path d="M246 120 Q265 135 284 120 L288 132 Q265 145 242 132 Z" fill="url(#goldPlate)"/>
+                    <!-- 座してパピルス（現代のPC/タブレット）を広げる書記官ポーズ -->
+                    <path d="M248 132 L282 132 L278 185 L252 185 Z" fill="url(#skinTone)"/>
+                    <!-- あぐら・座像の下半身 -->
+                    <path d="M230 185 Q265 180 300 185 L305 240 Q265 248 225 240 Z" fill="#f4ecd8" stroke="#c8a86b" stroke-width="2"/>
+                    <!-- 前方に広げるパピルス巻物（コードの石板） -->
+                    <path d="M260 145 L220 165 L225 178 L265 158 Z" fill="url(#skinTone)"/>
+                    <rect x="180" y="162" width="50" height="24" rx="3" fill="#fdfaf2" stroke="#d4af37" stroke-width="2"/>
+                    <text x="186" y="174" font-family="'Space Grotesk', monospace" font-size="7" fill="#0d9488">&lt;code/&gt;</text>
+                    <text x="186" y="182" font-family="'Space Grotesk', monospace" font-size="6" fill="#b85d3b">LLM:AI</text>
+                    <!-- 銘文 -->
+                    <text x="270" y="35" font-family="'Cinzel', serif" font-size="10" fill="#d4af37">SCRIBE</text>
+                  </g>
+
+                  <!-- 足元の石畳（基壇） -->
+                  <rect x="20" y="246" width="320" height="8" fill="url(#goldPlate)"/>
+                  <line x1="20" y1="246" x2="340" y2="246" stroke="#134e4a" stroke-width="2"/>
                 </svg>
               </div>
 
-              <!-- 枠下のカルトゥーシュ名牌 -->
+              <!-- カルトゥーシュ名牌 -->
               <div class="cartouche-nameplate">
                 <span class="cartouche-border-inner">
-                  <span class="hieroglyph-name">𓆃 𓏤 𓎛 𓋹 𓌃</span>
+                  <span class="hieroglyph-name">𓆃 𓏤 𓎛 𓋹 𓌃 𓊹</span>
                   <span class="nameplate-kanji">福山 佳</span>
-                  <small>Yoshika Fukuyama</small>
+                  <small>Yoshika Fukuyama | Digital Scribe</small>
                 </span>
               </div>
 
-              <div class="pyramid-seal">
-                <span>☥ SCRIBE ☥</span>
+              <!-- 壁画フリーズ下部 -->
+              <div class="tableau-footer-seal">
+                <span>☥ ARCHIVES OF MA'AT & CODE ☥</span>
               </div>
             </div>
           </div>
@@ -184,108 +270,132 @@
       </a>
     </section>
 
-    <!-- About セクション：我が素性と信念 -->
+    <!-- 壁画フリーズ仕切り（ロータスとパピルス柱頭） -->
+    <div class="temple-frieze-divider" aria-hidden="true">
+      <div class="frieze-motif">𓋹 𓍯 𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀 𓋹 𓍯 𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀</div>
+    </div>
+
+    <!-- About セクション：技術面での特徴と素性 -->
     <section class="about section" id="about">
       <div class="container">
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓂀</span>
-          <span class="section-tag">HERITAGE & ESSENCE</span>
-          <h2 class="section-title">我が素性、そして求道</h2>
-          <div class="hieroglyph-sub">𓋹 永遠の秩序（マアト）を重んじるデジタル書記官 𓋹</div>
+          <span class="section-tag">CORE COMPETENCIES & ESSENCE</span>
+          <h2 class="section-title">壁画に刻まれし技術的強み</h2>
+          <div class="hieroglyph-sub">𓋹 フロントからバックエンド、LLM自律協調まで 𓋹</div>
         </div>
 
         <div class="about-grid">
+          <!-- 技術的強み（4つの柱） -->
           <div class="about-papyrus-card stone-slab reveal">
             <div class="slab-engraving-top">
-              <span>𓊹 𓌃 𓁀 𓋹 𓍯 𓎛</span>
+              <span>𓊹 𓌃 𓁀 𓋹 𓍯 𓎛 𓆣 𓈓</span>
             </div>
 
-            <h3 class="slab-heading">「マアト（秩序と調和）」をコードに宿す</h3>
+            <h3 class="slab-heading">「マアト（秩序と調和）」を現代システムに宿す</h3>
             <p>
-              古代エジプトにおいて、書記官（スクライブ）は神々の言葉をパピルスや神殿の石壁に記録し、国家の秩序を保つ最も崇高な専門職でした。
+              古代エジプトにおいて、神殿の壁画やパピルスに正確無比な記録を刻む書記官（スクライブ）は、知識と統治の要でした。
             </p>
             <p>
-              私は東京電機大学で情報工学を学びながら、現代のWeb空間という無限のパピルスに、乱れのない美しいコードとUIを刻むエンジニア・デザイナーです。
-            </p>
-            <p>
-              画面を開いた瞬間に心奪われるような爽やかな碧緑（エジプシャングリーン・ターコイズ）の色彩設計、ミリ単位の余白が織りなす黄金比のレイアウト。それらを最新のフロントエンド技術で実装します。
+              私は東京電機大学での計算機科学の研鑽を土台に、現代のデジタル空間において<strong>「フロント・バックエンド・AI自律協調」</strong>が美しく調和するシステムを構築しています。
             </p>
 
             <div class="tenets-list">
               <div class="tenet-item">
                 <div class="tenet-glyph">𓁀</div>
                 <div>
-                  <h4>一、不変の美（黄金比のUI設計）</h4>
-                  <p>ピラミッドが数千年の風雪に耐えるように、時代に左右されない洗練されたインターフェースを追求します。</p>
+                  <h4>フロント＆バックエンドの統合的理解</h4>
+                  <p>React/Viteによる直感的なUIから、Node.js/Express、PythonによるサーバーサイドAPI・ロジック設計まで一貫して把握し開発を推進できます。</p>
+                </div>
+              </div>
+              <div class="tenet-item">
+                <div class="tenet-glyph">𓋹</div>
+                <div>
+                  <h4>リアルタイム双方向通信の実装力</h4>
+                  <p>Socket.IOを活用し、複数クライアント間での低遅延データ送受信や共同編集ステートの同期処理をチーム開発で実装した実績を持ちます。</p>
+                </div>
+              </div>
+              <div class="tenet-item">
+                <div class="tenet-glyph">𓊹</div>
+                <div>
+                  <h4>マルチLLMとデータ連携アーキテクチャ</h4>
+                  <p>Groq, Gemini, Mistralを用途に応じて役割分担させ、JSON Schemaによる厳格な出力制御とPostgreSQL永続化を組み合わせた自律処理を実現。</p>
                 </div>
               </div>
               <div class="tenet-item">
                 <div class="tenet-glyph">𓊝</div>
                 <div>
-                  <h4>二、ナイルの舟（旅路からの霊感）</h4>
-                  <p>見知らぬ大地や遺跡を旅し、そこで受ける自然の雄大さと清涼感を、デザインの余白と発色に転換します。</p>
-                </div>
-              </div>
-              <div class="tenet-item">
-                <div class="tenet-glyph">𓌃</div>
-                <div>
-                  <h4>三、神聖なる記述（堅牢なフロントエンド）</h4>
-                  <p>TypeScript、React、アクセシビリティ標準を遵守し、誰もが軽快に読解・操作できる堅牢な実装を行います。</p>
+                  <h4>チーム開発での協調性と倫理的配慮</h4>
+                  <p>Gitフローを遵守したバックエンド担当経験に加え、AI教育支援アプリでは個人情報や著作権への配慮など実社会に即した設計面を重視しています。</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 石板プロフィールサマリー -->
+          <!-- プロフィール石板 -->
           <div class="profile-tablet stone-slab reveal delay-1">
             <div class="cartouche-header">
               <span class="cartouche-ring">𓍯</span>
-              <h4>書記官の銘録</h4>
+              <h4>書記官の銘録碑</h4>
               <span class="cartouche-ring">𓍯</span>
+            </div>
+
+            <!-- アヌビス神・ホルスの守護レリーフ小枠 -->
+            <div class="slab-guardian-art">
+              <span class="guardian-icon">𓃠</span>
+              <span class="guardian-text">PROTECTED BY MA'AT</span>
+              <span class="guardian-icon">𓆃</span>
             </div>
 
             <ul class="hieroglyph-list">
               <li>
                 <span class="h-icon">𓀀</span>
                 <div class="h-content">
-                  <span class="h-label">俗名・真名</span>
+                  <span class="h-label">氏名</span>
                   <span class="h-value">福山 佳 (Yoshika Fukuyama)</span>
                 </div>
               </li>
               <li>
                 <span class="h-icon">𓉐</span>
                 <div class="h-content">
-                  <span class="h-label">学術の神殿</span>
-                  <span class="h-value">東京電機大学 (Tokyo Denki Univ.)</span>
+                  <span class="h-label">所属神殿（大学）</span>
+                  <span class="h-value">東京電機大学</span>
                 </div>
               </li>
               <li>
                 <span class="h-icon">𓈓</span>
                 <div class="h-content">
-                  <span class="h-label">座所（拠点）</span>
-                  <span class="h-value">日出づる国・東京 (Tokyo, Japan)</span>
+                  <span class="h-label">拠点</span>
+                  <span class="h-value">東京 (Tokyo, Japan)</span>
                 </div>
               </li>
               <li>
                 <span class="h-icon">𓌃</span>
                 <div class="h-content">
-                  <span class="h-label">司る術</span>
-                  <span class="h-value">Webフロントエンド, UI/UXデザイン</span>
+                  <span class="h-label">主軸領域</span>
+                  <span class="h-value">LLMマルチエージェント, バックエンド, リアルタイム通信</span>
+                </div>
+              </li>
+              <li>
+                <span class="h-icon">𓊹</span>
+                <div class="h-content">
+                  <span class="h-label">探求中の領域</span>
+                  <span class="h-value gold-text">AWS（資格取得へ向け研鑽中）</span>
                 </div>
               </li>
               <li>
                 <span class="h-icon">𓊝</span>
                 <div class="h-content">
-                  <span class="h-label">至高の道楽</span>
-                  <span class="h-value gold-text">国内外の放浪・一人旅、悠久の風景撮影</span>
+                  <span class="h-label">至高の趣味</span>
+                  <span class="h-value gold-text">国内・海外の一人旅、風景写真撮影</span>
                 </div>
               </li>
             </ul>
 
             <div class="tablet-footer">
-              <a href="#contact" class="btn btn-egypt-gold btn-block">
+              <a href="#works" class="btn btn-egypt-gold btn-block">
                 <i class="fa-solid fa-scroll"></i>
-                <span>伝令を送る（Contact）</span>
+                <span>開発壁画（石板）へ進む</span>
               </a>
             </div>
           </div>
@@ -293,339 +403,358 @@
       </div>
     </section>
 
-    <!-- Skills セクション：石版に刻まれし術と道具 -->
+    <!-- 壁画フリーズ仕切り -->
+    <div class="temple-frieze-divider" aria-hidden="true">
+      <div class="frieze-motif">𓆣 𓇳 𓁀 𓋹 𓍯 𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀 𓋹 𓍯 𓊹 𓆃 𓂀 𓊝</div>
+    </div>
+
+    <!-- Skills セクション：技術スタック・理解度・担当範囲 -->
     <section class="skills section" id="skills">
       <div class="container">
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓌃</span>
-          <span class="section-tag">SACRED TECHNIQUES</span>
-          <h2 class="section-title">書記官が操る術と呪具</h2>
-          <div class="hieroglyph-sub">𓊹 現代のコードを紡ぐための技術体系 𓊹</div>
+          <span class="section-tag">SACRED TECH STACK</span>
+          <h2 class="section-title">修得せし技術の石柱</h2>
+          <div class="hieroglyph-sub">𓊹 実務・開発経験に裏打ちされた理解度と担当範囲 𓊹</div>
         </div>
 
         <div class="skills-grid">
-          <!-- 碑文 1: フロントエンド -->
+          <!-- 1. プログラミング言語 -->
           <div class="skill-slab stone-slab reveal">
-            <div class="slab-badge"><span class="badge-glyph">𓁀</span> 表層の術</div>
-            <h3 class="skill-category-title">Front-end Arts</h3>
+            <div class="slab-badge"><span class="badge-glyph">𓌃</span> 言語体系</div>
+            <h3 class="skill-category-title">Languages</h3>
+            <p class="category-summary">大学授業および自主・チーム開発を通じた実践習得</p>
             <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
 
-            <div class="skill-meters">
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>HTML5 / CSS3 / Sass</span>
-                  <span class="meter-glyph">𓆃 90%</span>
+            <div class="skill-cards-inner">
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Python</strong>
+                  <span class="tech-level">エージェント開発・DB接続</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 90%;"></div></div>
+                <p class="tech-desc">マルチエージェントシステムの自律処理やpsycopg2でのPostgreSQL操作に使用。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>JavaScript (ES6+)</span>
-                  <span class="meter-glyph">𓋹 85%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>JavaScript (ES6+)</strong>
+                  <span class="tech-level">Webアプリ開発</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
+                <p class="tech-desc">ReactフロントエンドおよびNode.jsバックエンドの双方で主軸として活用。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>TypeScript</span>
-                  <span class="meter-glyph">𓂀 75%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Java</strong>
+                  <span class="tech-level">授業・演習</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
+                <p class="tech-desc">オブジェクト指向設計、データ構造、アルゴリズムの実装基礎を学習。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>React / Next.js</span>
-                  <span class="meter-glyph">𓊹 80%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>HTML5 / CSS3</strong>
+                  <span class="tech-level">マークアップ・UI設計</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 80%;"></div></div>
-              </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Tailwind CSS</span>
-                  <span class="meter-glyph">𓌃 85%</span>
-                </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
+                <p class="tech-desc">セマンティックな構造化、レスポンシブWebデザイン、CSSアニメーション。</p>
               </div>
             </div>
           </div>
 
-          <!-- 碑文 2: バックエンド & データベース -->
+          <!-- 2. バックエンド・通信・DB -->
           <div class="skill-slab stone-slab reveal delay-1">
-            <div class="slab-badge"><span class="badge-glyph">𓉐</span> 深層の基礎</div>
-            <h3 class="skill-category-title">Back-end & Vaults</h3>
+            <div class="slab-badge"><span class="badge-glyph">𓉐</span> 骨格と神託の蔵</div>
+            <h3 class="skill-category-title">Backend, Realtime & DB</h3>
+            <p class="category-summary">チーム開発バックエンド担当およびクラウドDB連携</p>
             <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
 
-            <div class="skill-meters">
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Node.js / Express</span>
-                  <span class="meter-glyph">𓅓 70%</span>
+            <div class="skill-cards-inner">
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Node.js / Express</strong>
+                  <span class="tech-level">サーバー / REST API</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 70%;"></div></div>
+                <p class="tech-desc">チーム開発にてCanvasアプリのサーバーサイドAPI構築を担当。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Python / FastAPI</span>
-                  <span class="meter-glyph">𓆃 65%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Socket.IO</strong>
+                  <span class="tech-level">双方向リアルタイム通信</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 65%;"></div></div>
+                <p class="tech-desc">複数人での同時操作・描画データの低遅延ブロードキャストを実装。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>SQL / PostgreSQL / Supabase</span>
-                  <span class="meter-glyph">𓊹 75%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>PostgreSQL / Neon</strong>
+                  <span class="tech-level">リレーショナルDB</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
+                <p class="tech-desc">サーバーレスPostgreSQL「Neon」およびローカルDBでのデータ保存・連携。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>REST API / GraphQL</span>
-                  <span class="meter-glyph">𓋹 75%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>psycopg2</strong>
+                  <span class="tech-level">Python DBアダプタ</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
-              </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Firebase / Cloud Auth</span>
-                  <span class="meter-glyph">𓂀 70%</span>
-                </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 70%;"></div></div>
+                <p class="tech-desc">PythonとPostgreSQL間のトランザクション処理・クエリ発行を実装。</p>
               </div>
             </div>
           </div>
 
-          <!-- 碑文 3: 意匠 & 呪具（デザイン・ツール） -->
+          <!-- 3. AI / LLM & インフラ・ツール -->
           <div class="skill-slab stone-slab reveal delay-2">
-            <div class="slab-badge"><span class="badge-glyph">𓎛</span> 意匠と道具</div>
-            <h3 class="skill-category-title">Design & Instruments</h3>
+            <div class="slab-badge"><span class="badge-glyph">𓊹</span> 知性と儀具</div>
+            <h3 class="skill-category-title">AI / LLM & Tools</h3>
+            <p class="category-summary">マルチLLMオーケストレーションとモダン開発環境</p>
             <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
 
-            <div class="skill-meters">
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Figma (UI/UX 意匠図面)</span>
-                  <span class="meter-glyph">𓁀 85%</span>
+            <div class="skill-cards-inner">
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Groq / Gemini / Mistral API</strong>
+                  <span class="tech-level">マルチエージェント</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
+                <p class="tech-desc">速度や論理性能の違いを活かし、複数LLMを適材適所で分担・連携。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Git / GitHub</span>
-                  <span class="meter-glyph">𓌃 85%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>JSON Schema</strong>
+                  <span class="tech-level">構造化出力制御</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
+                <p class="tech-desc">LLMの応答をスキーマ定義で厳格にバリデーションし後続処理へパイプライン化。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>VS Code / Cursor</span>
-                  <span class="meter-glyph">𓊹 90%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>React / Vite</strong>
+                  <span class="tech-level">高速フロントエンド</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 90%;"></div></div>
+                <p class="tech-desc">Viteの軽快なビルド環境とReactコンポーネント指向によるSPA構築。</p>
               </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Docker (コンテナ運用の初歩)</span>
-                  <span class="meter-glyph">𓍯 60%</span>
+
+              <div class="tech-item">
+                <div class="tech-name-row">
+                  <strong>Render / Git / GitHub</strong>
+                  <span class="tech-level">デプロイ・バージョン管理</span>
                 </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 60%;"></div></div>
-              </div>
-              <div class="meter-item">
-                <div class="meter-head">
-                  <span>Vercel / GitHub Pages</span>
-                  <span class="meter-glyph">𓋹 85%</span>
-                </div>
-                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
+                <p class="tech-desc">チームでのブランチ運用、PRレビュー、RenderによるWebサービス公開。</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ヒエログリフ・キーワード護符 -->
-        <div class="amulet-wrapper reveal">
-          <span class="amulet-title">護符と銘文（Keywords）:</span>
-          <div class="amulet-list">
-            <span class="amulet">𓋹 Responsive Design</span>
-            <span class="amulet">𓂀 Ma'at Clean Architecture</span>
-            <span class="amulet">𓆃 High Performance</span>
-            <span class="amulet">𓊹 Turquoise & Lapis Palette</span>
-            <span class="amulet">𓌃 Semantic Markup</span>
-            <span class="amulet">𓊝 Wanderlust Spirit</span>
+        <!-- 開発ツール・エディタ群 -->
+        <div class="tool-id-bar stone-slab reveal">
+          <span class="tool-title"><span class="ankh-icon">☥</span> 開発環境・道具一式:</span>
+          <div class="tool-pills">
+            <span class="tool-pill"><i class="fa-solid fa-code"></i> VS Code</span>
+            <span class="tool-pill"><i class="fa-solid fa-laptop-code"></i> IntelliJ IDEA</span>
+            <span class="tool-pill"><i class="fa-solid fa-moon"></i> Eclipse</span>
+            <span class="tool-pill"><i class="fa-brands fa-git-alt"></i> Git / GitHub</span>
+            <span class="tool-pill"><i class="fa-solid fa-cloud-arrow-up"></i> Render</span>
+            <span class="tool-pill status-learning"><i class="fa-brands fa-aws"></i> AWS（資格取得へ向け学習中）</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Works セクション：石碑に奉納されし制作物 -->
+    <!-- 壁画フリーズ仕切り -->
+    <div class="temple-frieze-divider" aria-hidden="true">
+      <div class="frieze-motif">𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀 𓋹 𓍯 𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀 𓋹 𓍯</div>
+    </div>
+
+    <!-- Works セクション：開発経験の石板壁画レリーフ -->
     <section class="works section" id="works">
       <div class="container">
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓊹</span>
-          <span class="section-tag">SACRED RELIEFS & WORKS</span>
-          <h2 class="section-title">奉納石板・制作録</h2>
-          <div class="hieroglyph-sub">𓍯 現代に遺すアプリケーションと意匠の結晶 𓍯</div>
+          <span class="section-tag">SACRED PROJECTS & ARCHIVES</span>
+          <h2 class="section-title">神殿玄室に遺す開発壁画（Projects）</h2>
+          <div class="hieroglyph-sub">𓍯 チーム開発・自律型AI・リアルタイム通信の実績 𓍯</div>
         </div>
 
-        <!-- 壁画風フィルター -->
-        <div class="egypt-filter reveal">
-          <button class="filter-tab active" data-filter="all"><span class="tab-glyph">𓋹</span> 全ての石板</button>
-          <button class="filter-tab" data-filter="app"><span class="tab-glyph">𓊹</span> 術式アプリ</button>
-          <button class="filter-tab" data-filter="web"><span class="tab-glyph">𓁀</span> 神殿ウェブ</button>
-          <button class="filter-tab" data-filter="ui"><span class="tab-glyph">𓌃</span> 意匠図面 (UI)</button>
-        </div>
-
-        <div class="works-grid">
-          <!-- 制作物 1: TabiLog (旅アプリ) -->
-          <article class="relief-card stone-slab reveal" data-category="app">
+        <!-- 開発実績のグリッド -->
+        <div class="works-grid egypt-project-grid">
+          <!-- 実績 1: LLMマルチエージェントシステム -->
+          <article class="relief-card stone-slab reveal featured-project" data-category="ai">
             <div class="relief-header">
-              <div class="relief-art relief-nile">
-                <div class="hieroglyph-bg-pattern">𓊝 𓈓 𓊝 𓈓</div>
-                <i class="fa-solid fa-map-location-dot mural-icon"></i>
+              <!-- 壁画アート：神々の評議・エージェント連携シーン -->
+              <div class="relief-art relief-lapislazuli project-mural-art">
+                <svg viewBox="0 0 320 180" class="card-mural-svg" xmlns="http://www.w3.org/2000/svg">
+                  <!-- エジプト壁画風：3柱の神（Groq, Gemini, Mistral）が円卓・石板を囲み託宣を交わす構図 -->
+                  <rect x="0" y="0" width="320" height="180" fill="none"/>
+                  <!-- 幾何学ヒエログリフ枠 -->
+                  <text x="20" y="25" fill="#f6d365" font-size="12" letter-spacing="4">𓊹 𓌃 𓊹 𓌃 𓊹 𓌃</text>
+                  <text x="200" y="25" fill="#f6d365" font-size="12" letter-spacing="4">𓋹 𓍯 𓋹 𓍯</text>
+                  <!-- 神々のシルエットたち -->
+                  <!-- 左: 隼頭神ホルス（超高速推論・Groq） -->
+                  <path d="M40 70 Q60 55 75 75 L70 125 L35 125 Z" fill="#d9825b"/>
+                  <path d="M55 55 Q70 45 80 60 Q70 65 60 62 L48 70" fill="#2d2419"/>
+                  <!-- 中央: 日輪神ラー（文脈・Gemini） -->
+                  <circle cx="160" cy="55" r="18" fill="#f6d365"/>
+                  <path d="M145 78 L175 78 L170 135 L150 135 Z" fill="#d9825b"/>
+                  <!-- 右: トキ頭神トート（推敲・Mistral） -->
+                  <path d="M260 70 Q240 55 225 75 L230 125 L265 125 Z" fill="#d9825b"/>
+                  <path d="M245 55 Q230 45 220 60 Q230 65 240 62 L252 70" fill="#2d2419"/>
+                  <!-- 中央のPostgreSQL石板 -->
+                  <rect x="120" y="115" width="80" height="45" rx="3" fill="#0f766e" stroke="#f6d365" stroke-width="2"/>
+                  <text x="130" y="135" fill="#fdfaf2" font-family="'Space Grotesk', monospace" font-size="9">&lt;PostgreSQL&gt;</text>
+                  <text x="134" y="148" fill="#5eead4" font-family="'Space Grotesk', monospace" font-size="8">psycopg2</text>
+                  <!-- エージェント間を結ぶ光のライン（双方向通信） -->
+                  <path d="M75 85 Q115 70 145 85" stroke="#f6d365" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+                  <path d="M175 85 Q205 70 225 85" stroke="#f6d365" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+                  <!-- 下部境界 -->
+                  <line x1="20" y1="168" x2="300" y2="168" stroke="#f6d365" stroke-width="2"/>
+                </svg>
               </div>
-              <div class="relief-seal">𓊝 旅路</div>
+              <div class="relief-seal">𓊹 AI・自律協調</div>
+            </div>
+            <div class="relief-body">
+              <div class="cartouche-tags">
+                <span>Python</span>
+                <span>Groq API</span>
+                <span>Gemini API</span>
+                <span>Mistral API</span>
+                <span>PostgreSQL</span>
+                <span>psycopg2</span>
+                <span>JSON Schema</span>
+              </div>
+              <h3 class="relief-title">LLMマルチエージェントシステム</h3>
+              <p class="project-tagline">神託の九柱神が如き、複数AI自律連携アーキテクチャ</p>
+              
+              <p class="relief-desc">
+                複数のAIエージェントが役割を明確に分担し、相互に通信・連携しながら高度な処理を自律的に進めるシステムを開発。
+              </p>
+
+              <div class="project-highlights">
+                <h4><i class="fa-solid fa-scroll"></i> 担当範囲・実装詳細</h4>
+                <ul>
+                  <li><strong>Pythonによる自律処理実装:</strong> エージェントごとのペルソナ・責務をコード化し、ステート管理とワークフローを制御。</li>
+                  <li><strong>複数LLM APIのハイブリッド構成:</strong> Groq（超高速推論）、Gemini（長文・文脈把握）、Mistralをタスク特性に応じて使い分け。</li>
+                  <li><strong>JSON Schemaによる厳格な出力制約:</strong> 各エージェントの返答を構造化データとして保証し、不整合を低減。</li>
+                  <li><strong>PostgreSQL連携:</strong> psycopg2を用いてエージェント間の対話履歴や成果物をDBへ確実に永続化。</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 実績 2: リアルタイム共同編集Canvasアプリ -->
+          <article class="relief-card stone-slab reveal delay-1 featured-project" data-category="realtime">
+            <div class="relief-header">
+              <!-- 壁画アート：共同で大壁画を描き上げる職人たちのシーン -->
+              <div class="relief-art relief-nile project-mural-art">
+                <svg viewBox="0 0 320 180" class="card-mural-svg" xmlns="http://www.w3.org/2000/svg">
+                  <!-- エジプト壁画風：巨大なパピルスキャンバスを複数人が同時に筆を執って描く構図 -->
+                  <rect x="0" y="0" width="320" height="180" fill="none"/>
+                  <text x="20" y="25" fill="#5eead4" font-size="12" letter-spacing="4">𓊝 𓈓 𓊝 𓈓 𓋹 𓍯</text>
+                  <!-- 巨大キャンバス壁 -->
+                  <rect x="70" y="45" width="180" height="90" rx="4" fill="#fdfaf2" stroke="#d4af37" stroke-width="2"/>
+                  <!-- キャンバス上のリアルタイム描画線 -->
+                  <path d="M90 70 Q130 95 170 65 T230 100" stroke="#0d9488" stroke-width="3" fill="none"/>
+                  <circle cx="120" cy="85" r="4" fill="#c86446"/>
+                  <circle cx="190" cy="72" r="4" fill="#2dd4bf"/>
+                  <!-- 左側の描画者（クライアント1） -->
+                  <path d="M30 90 L55 90 L52 145 L32 145 Z" fill="#d9825b"/>
+                  <circle cx="42" cy="78" r="8" fill="#d9825b"/>
+                  <!-- 筆を伸ばす腕 -->
+                  <line x1="50" y1="95" x2="88" y2="72" stroke="#d9825b" stroke-width="5" stroke-linecap="round"/>
+                  <!-- 右側の描画者（クライアント2） -->
+                  <path d="M290 90 L265 90 L268 145 L288 145 Z" fill="#d9825b"/>
+                  <circle cx="278" cy="78" r="8" fill="#d9825b"/>
+                  <line x1="270" y1="95" x2="232" y2="98" stroke="#d9825b" stroke-width="5" stroke-linecap="round"/>
+                  <!-- Socket.IOの電波・同期パルス -->
+                  <path d="M160 30 Q170 38 160 46 M155 25 Q175 38 155 51" stroke="#f6d365" stroke-width="2" fill="none"/>
+                  <text x="135" y="152" fill="#5eead4" font-family="'Space Grotesk', monospace" font-size="9">&lt;Socket.IO / Neon&gt;</text>
+                  <line x1="20" y1="168" x2="300" y2="168" stroke="#5eead4" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="relief-seal">𓋹 リアルタイム・チーム開発</div>
             </div>
             <div class="relief-body">
               <div class="cartouche-tags">
                 <span>React</span>
-                <span>Mapbox</span>
-                <span>Tailwind</span>
+                <span>Vite</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Socket.IO</span>
+                <span>PostgreSQL (Neon)</span>
+                <span>Render</span>
               </div>
-              <h3 class="relief-title">TabiLog - 旅の足跡と記憶の石板</h3>
+              <h3 class="relief-title">リアルタイム共同編集Canvasアプリ</h3>
+              <p class="project-tagline">複数人が一枚の巨大神殿キャンバスを同時に描画・操作するWebアプリ</p>
+              
               <p class="relief-desc">
-                放浪の旅路で出会った風景や神殿の記憶をマップに刻み、航海録として振り返ることができる旅アプリ。青緑の清涼なナイルの風をデザインに取り入れました。
+                チーム開発において<strong>バックエンド全般</strong>を担当。低遅延なリアルタイム通信とクラウドPostgreSQLの連携基盤を構築。
               </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('旅のデモ記録サンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
+
+              <div class="project-highlights">
+                <h4><i class="fa-solid fa-scroll"></i> 担当範囲・実装詳細</h4>
+                <ul>
+                  <li><strong>バックエンド開発を一手に担当:</strong> Node.js・Expressによるサーバー設計および各種APIエンドポイントの実装。</li>
+                  <li><strong>Socket.IO双方向通信:</strong> 複数ユーザーのカーソル位置や描画イベントを低遅延でリアルタイム同期・ブロードキャスト。</li>
+                  <li><strong>クラウド型PostgreSQL (Neon) 連携:</strong> キャンバスの状態やユーザーデータを安全かつスケーラブルに永続化。</li>
+                  <li><strong>Renderデプロイ・運用:</strong> クラウドプラットフォームRenderを用いたCI/CDと本番環境デプロイを実施。</li>
+                </ul>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 2: TaskFlow (カンバンアプリ) -->
-          <article class="relief-card stone-slab reveal delay-1" data-category="app">
+          <!-- 実績 3: AI教育支援アプリ -->
+          <article class="relief-card stone-slab reveal delay-2 featured-project" data-category="ai">
             <div class="relief-header">
-              <div class="relief-art relief-turquoise">
-                <div class="hieroglyph-bg-pattern">𓊹 𓌃 𓊹 𓌃</div>
-                <i class="fa-solid fa-list-check mural-icon"></i>
+              <!-- 壁画アート：知恵を授ける教育と倫理の秤シーン -->
+              <div class="relief-art relief-gold project-mural-art">
+                <svg viewBox="0 0 320 180" class="card-mural-svg" xmlns="http://www.w3.org/2000/svg">
+                  <!-- エジプト壁画風：パピルス巻物を開いて教示する教師と真理の天秤（倫理・著作権配慮） -->
+                  <rect x="0" y="0" width="320" height="180" fill="none"/>
+                  <text x="20" y="25" fill="#b85d3b" font-size="12" letter-spacing="4">𓁀 𓋹 𓆃 𓊹 𓁀 𓋹</text>
+                  <!-- マアトの天秤（倫理・著作権の公平さ） -->
+                  <line x1="160" y1="45" x2="160" y2="105" stroke="#14100c" stroke-width="3"/>
+                  <line x1="125" y1="65" x2="195" y2="65" stroke="#14100c" stroke-width="2"/>
+                  <!-- 左右の皿 -->
+                  <path d="M115 80 L135 80 L125 90 Z" fill="#b8860b"/>
+                  <line x1="125" y1="65" x2="125" y2="80" stroke="#14100c" stroke-width="1.5"/>
+                  <path d="M185 80 L205 80 L195 90 Z" fill="#b8860b"/>
+                  <line x1="195" y1="65" x2="195" y2="80" stroke="#14100c" stroke-width="1.5"/>
+                  <!-- 真理の羽（マアトの羽） -->
+                  <path d="M125 76 Q122 68 125 65 Q128 68 125 76" fill="#0d9488"/>
+                  <!-- 教える側と学ぶ側の人物像 -->
+                  <path d="M50 85 L75 85 L72 140 L52 140 Z" fill="#d9825b"/>
+                  <circle cx="62" cy="72" r="8" fill="#d9825b"/>
+                  <path d="M270 95 L248 95 L250 140 L268 140 Z" fill="#d9825b"/>
+                  <circle cx="258" cy="85" r="7" fill="#d9825b"/>
+                  <!-- パピルスの知恵 -->
+                  <rect x="85" y="115" width="150" height="35" rx="3" fill="#fdfaf2" stroke="#d4af37" stroke-width="2"/>
+                  <text x="96" y="132" fill="#14100c" font-family="'Shippori Mincho', serif" font-size="8">AI教育支援・著作権＆倫理配慮</text>
+                  <line x1="20" y1="168" x2="300" y2="168" stroke="#b85d3b" stroke-width="2"/>
+                </svg>
               </div>
-              <div class="relief-seal">𓌃 秩序</div>
+              <div class="relief-seal">𓁀 教育・チーム開発</div>
             </div>
             <div class="relief-body">
               <div class="cartouche-tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>DnD</span>
+                <span>AI企画・設計</span>
+                <span>チーム開発</span>
+                <span>著作権・倫理配慮</span>
+                <span>教育現場支援</span>
               </div>
-              <h3 class="relief-title">TaskFlow - 秩序のカンバンボード</h3>
+              <h3 class="relief-title">AI教育支援アプリ</h3>
+              <p class="project-tagline">教員の負担軽減と生徒の探求学習を支える実践的AIプロダクト</p>
+              
               <p class="relief-desc">
-                雑多な日々の業務を神聖なる「マアトの天秤」の如く整理する直感的タスク管理システム。ドラッグ＆ドロップで快適に進捗を整えます。
+                チーム開発にて、AIを活用して教育現場の課題を解決するアプリケーションの企画・設計・開発を推進。
               </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
-              </div>
-            </div>
-          </article>
 
-          <!-- 制作物 3: FinPulse (ダッシュボードUI) -->
-          <article class="relief-card stone-slab reveal delay-2" data-category="ui">
-            <div class="relief-header">
-              <div class="relief-art relief-gold">
-                <div class="hieroglyph-bg-pattern">𓋹 𓍯 𓋹 𓍯</div>
-                <i class="fa-solid fa-coins mural-icon"></i>
-              </div>
-              <div class="relief-seal">𓍯 財宝</div>
-            </div>
-            <div class="relief-body">
-              <div class="cartouche-tags">
-                <span>Figma</span>
-                <span>UI/UX</span>
-                <span>Design System</span>
-              </div>
-              <h3 class="relief-title">FinPulse - 黄金宝物庫の計数盤</h3>
-              <p class="relief-desc">
-                資産の増減や配分を美しきチャートで可視化する金融ダッシュボードUI。エジプシャンゴールドとラピスラズリの洗練された意匠システム。
-              </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('Figmaケーススタディです'); return false;"><i class="fa-solid fa-eye"></i> 意匠図</a>
-                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-figma"></i> Figma</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 制作物 4: BreezeCast (天気予報アプリ) -->
-          <article class="relief-card stone-slab reveal" data-category="app">
-            <div class="relief-header">
-              <div class="relief-art relief-sky">
-                <div class="hieroglyph-bg-pattern">𓆃 𓇳 𓆃 𓇳</div>
-                <i class="fa-solid fa-cloud-sun mural-icon"></i>
-              </div>
-              <div class="relief-seal">𓆃 天候</div>
-            </div>
-            <div class="relief-body">
-              <div class="cartouche-tags">
-                <span>Next.js</span>
-                <span>Weather API</span>
-                <span>Chart.js</span>
-              </div>
-              <h3 class="relief-title">BreezeCast - 太陽神ラーと天空の託宣</h3>
-              <p class="relief-desc">
-                各地の天候をリアルタイムに占うウェザーアプリケーション。砂漠の熱気から高原の爽やかな涼風まで、最適な旅装を提示します。
-              </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 制作物 5: Verde Cafe (カフェLP) -->
-          <article class="relief-card stone-slab reveal delay-1" data-category="web">
-            <div class="relief-header">
-              <div class="relief-art relief-emerald">
-                <div class="hieroglyph-bg-pattern">𓁀 𓋹 𓁀 𓋹</div>
-                <i class="fa-solid fa-mug-saucer mural-icon"></i>
-              </div>
-              <div class="relief-seal">𓋹 憩い</div>
-            </div>
-            <div class="relief-body">
-              <div class="cartouche-tags">
-                <span>HTML / CSS</span>
-                <span>JavaScript</span>
-                <span>Parallax</span>
-              </div>
-              <h3 class="relief-title">Verde Oasis - オアシスカフェ銘碑</h3>
-              <p class="relief-desc">
-                旅人が喉を潤す緑あふれるオアシスをテーマにしたブランドWebサイト。滑らかなパララックス演出と清潔感あるタイポグラフィ。
-              </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 制作物 6: ZenHabit (モバイルUI) -->
-          <article class="relief-card stone-slab reveal delay-2" data-category="ui">
-            <div class="relief-header">
-              <div class="relief-art relief-lapislazuli">
-                <div class="hieroglyph-bg-pattern">𓂀 𓊹 𓂀 𓊹</div>
-                <i class="fa-solid fa-hourglass-start mural-icon"></i>
-              </div>
-              <div class="relief-seal">𓂀 習慣</div>
-            </div>
-            <div class="relief-body">
-              <div class="cartouche-tags">
-                <span>Figma</span>
-                <span>Mobile App</span>
-                <span>Micro-Interactions</span>
-              </div>
-              <h3 class="relief-title">ZenHabit - 日々の修練トラッカーUI</h3>
-              <p class="relief-desc">
-                石を一つずつ積み上げるように良き習慣を育むモバイルUI設計。達成時の心地よいアニメーションで継続を後押しします。
-              </p>
-              <div class="relief-actions">
-                <a href="#" class="btn-hieroglyph" onclick="alert('Figmaプロトタイプです'); return false;"><i class="fa-solid fa-eye"></i> 試作鑑賞</a>
-                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-figma"></i> Figma</a>
+              <div class="project-highlights">
+                <h4><i class="fa-solid fa-scroll"></i> 担当範囲・実装詳細</h4>
+                <ul>
+                  <li><strong>教育現場を想定した要件定義:</strong> 授業準備や教材作成など教員の業務負担を軽減する具体的機能の検討・具体化。</li>
+                  <li><strong>AI活用の機能設計:</strong> 単なる質問回答にとどまらず、学習意欲を引き出すプロンプト・アシスタント機能の検討。</li>
+                  <li><strong>法務・倫理的リスクへの配慮:</strong> 教育分野で極めて重要な「児童生徒の個人情報保護」や「教材著作権」に配慮した設計面の検討をリード。</li>
+                </ul>
               </div>
             </div>
           </article>
@@ -633,20 +762,62 @@
       </div>
     </section>
 
-    <!-- Travel セクション：旅路の壁画・放浪録 -->
+    <!-- 壁画フリーズ仕切り -->
+    <div class="temple-frieze-divider" aria-hidden="true">
+      <div class="frieze-motif">𓊝 𓈓 𓊝 𓈓 𓋹 𓍯 𓊹 𓆃 𓂀 𓊝 𓆣 𓇳 𓁀 𓋹 𓍯 𓊹 𓆃 𓂀</div>
+    </div>
+
+    <!-- Travel セクション：旅路の壁画・放浪パノラマ -->
     <section class="travel section" id="travel">
       <div class="container">
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓊝</span>
           <span class="section-tag">VOYAGE OF THE SCRIBE</span>
-          <h2 class="section-title">書記官の放浪録（Travel Journal）</h2>
-          <div class="hieroglyph-sub">𓈓 未知の地を踏み、風と光を魂に刻む 𓈓</div>
+          <h2 class="section-title">書記官の放浪壁画（Travel Journal）</h2>
+          <div class="hieroglyph-sub">𓈓 大河ナイルと未知なる地を踏み、風と光を魂に刻む 𓈓</div>
+        </div>
+
+        <!-- 太陽の舟（Solar Bark）航海壁画バナー -->
+        <div class="solar-bark-mural stone-slab reveal">
+          <svg viewBox="0 0 760 140" class="bark-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="nileWave" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0f766e" />
+                <stop offset="50%" stop-color="#0284c7" />
+                <stop offset="100%" stop-color="#0d9488" />
+              </linearGradient>
+            </defs>
+            <!-- 遠景のピラミッドシルエット -->
+            <polygon points="120,80 180,25 240,80" fill="rgba(212, 175, 55, 0.25)"/>
+            <polygon points="180,25 240,80 220,80" fill="rgba(180, 140, 50, 0.35)"/>
+            <polygon points="210,80 255,40 300,80" fill="rgba(212, 175, 55, 0.2)"/>
+
+            <!-- ナイルの大河の波（ジグザグ紋様 𓈓） -->
+            <path d="M0 100 Q40 92 80 100 T160 100 T240 100 T320 100 T400 100 T480 100 T560 100 T640 100 T720 100 T760 100 L760 140 L0 140 Z" fill="url(#nileWave)" opacity="0.75"/>
+            <path d="M0 112 Q40 104 80 112 T160 112 T240 112 T320 112 T400 112 T480 112 T560 112 T640 112 T720 112 T760 112 L760 140 L0 140 Z" fill="#0f766e"/>
+
+            <!-- 古代エジプトのパピルス舟（セケト舟） -->
+            <path d="M420 105 Q520 112 600 78 Q550 118 400 118 Q350 118 300 95 Q380 110 420 105 Z" fill="#d4af37" stroke="#aa7c11" stroke-width="2"/>
+            <!-- 船首と船尾のロータス巻き飾り -->
+            <circle cx="298" cy="93" r="5" fill="#0d9488"/>
+            <circle cx="602" cy="76" r="5" fill="#0d9488"/>
+            <!-- 舟上の神殿屋根と旅人 -->
+            <rect x="420" y="65" width="60" height="40" fill="#fdfaf2" stroke="#d4af37" stroke-width="2"/>
+            <circle cx="450" cy="50" r="14" fill="#f6d365"/>
+            <text x="432" y="90" font-family="'Cinzel', serif" font-size="11" fill="#0d9488">WAYFARER</text>
+            <!-- 水鳥と魚 -->
+            <text x="250" y="125" font-size="14" fill="#5eead4">𓆛</text>
+            <text x="640" y="65" font-size="16" fill="#f6d365">𓅓</text>
+          </svg>
+          <div class="bark-caption">
+            <span>𓊝 悠久のナイルを行く旅人の舟（セケト舟） 𓊝</span>
+          </div>
         </div>
 
         <div class="travel-mosaic">
-          <!-- 旅のエピソード 1: ナイル・水辺の旅 -->
+          <!-- 旅のエピソード 1: 水と風の旅 -->
           <div class="travel-card stone-slab reveal">
-            <div class="travel-icon"><i class="fa-solid fa-water"></i></div>
+            <div class="travel-mural-icon"><i class="fa-solid fa-water"></i></div>
             <span class="travel-tag">𓈓 水と風の旅</span>
             <h3 class="travel-title">碧き海と大河を巡る</h3>
             <p>
@@ -657,7 +828,7 @@
 
           <!-- 旅のエピソード 2: 遺跡・建築の美 -->
           <div class="travel-card stone-slab reveal delay-1">
-            <div class="travel-icon"><i class="fa-solid fa-monument"></i></div>
+            <div class="travel-mural-icon"><i class="fa-solid fa-monument"></i></div>
             <span class="travel-tag">𓉐 悠久の建造物</span>
             <h3 class="travel-title">石造建築と歴史の探訪</h3>
             <p>
@@ -668,7 +839,7 @@
 
           <!-- 旅のエピソード 3: カメラと一人旅 -->
           <div class="travel-card stone-slab reveal delay-2">
-            <div class="travel-icon"><i class="fa-solid fa-camera-retro"></i></div>
+            <div class="travel-mural-icon"><i class="fa-solid fa-camera-retro"></i></div>
             <span class="travel-tag">𓁀 瞬間の記録</span>
             <h3 class="travel-title">レンズ越しに捉える光景</h3>
             <p>
@@ -680,58 +851,63 @@
       </div>
     </section>
 
+    <!-- 壁画フリーズ仕切り -->
+    <div class="temple-frieze-divider" aria-hidden="true">
+      <div class="frieze-motif">𓍯 𓎛 𓆣 𓈓 𓊝 𓇳 𓁐 𓋹 𓍯 𓊹 𓆃 𓁀 𓃠 𓅓 𓏤 𓌃 𓍯 𓎛</div>
+    </div>
+
     <!-- Chronicle セクション：年代記（タイムライン） -->
     <section class="experience section" id="experience">
       <div class="container">
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓍯</span>
           <span class="section-tag">CHRONICLES OF ASCENT</span>
-          <h2 class="section-title">年代記・歩みの記録</h2>
-          <div class="hieroglyph-sub">𓋹 学びと制作の歩みを刻む石柱 𓋹</div>
+          <h2 class="section-title">年代記・歩みの石柱</h2>
+          <div class="hieroglyph-sub">𓋹 学びと制作の歩みを刻むオベリスク 𓋹</div>
         </div>
 
         <div class="stele-timeline">
-          <!-- 年代 1 -->
+          <!-- 年代 1: 2024 - Present -->
           <div class="stele-item reveal">
             <div class="stele-marker">
               <span class="stele-glyph">𓋹</span>
             </div>
             <div class="stele-box stone-slab">
-              <span class="stele-era"><i class="fa-regular fa-sun"></i> 現代・今まさに (2024 - Present)</span>
-              <h3 class="stele-title">モダンWebフロントエンドと意匠の極致へ</h3>
-              <span class="stele-place">東京電機大学 / 自主制作の探求</span>
+              <span class="stele-era"><i class="fa-regular fa-sun"></i> 現代・深化の時代 (2024 - Present)</span>
+              <h3 class="stele-title">LLMマルチエージェント & リアルタイム通信の結実</h3>
+              <span class="stele-place">東京電機大学 / 先進的チーム開発</span>
               <p>
-                React, Next.js, TypeScriptを用い、古代壁画の如き幾何学的美しさと現代の高性能を両立させたWebプロダクトの設計・開発に邁進中。
+                Pythonと複数LLM API（Groq, Gemini, Mistral）を掛け合わせた自律協調システムを実装。さらにSocket.IOを用いたリアルタイムCanvasアプリのバックエンド全般、Render環境へのデプロイまでを担当し、実践的なエンジニアリング能力を高める。
               </p>
             </div>
           </div>
 
-          <!-- 年代 2 -->
+          <!-- 年代 2: 2023 -->
           <div class="stele-item reveal delay-1">
             <div class="stele-marker">
               <span class="stele-glyph">𓌃</span>
             </div>
             <div class="stele-box stone-slab">
-              <span class="stele-era"><i class="fa-regular fa-sun"></i> 研鑽の時代 (2023)</span>
-              <h3 class="stele-title">ハッカソン挑戦とUI/UX設計の深化</h3>
-              <span class="stele-place">学内外プロジェクト・チーム開発</span>
+              <span class="stele-era"><i class="fa-regular fa-sun"></i> 協調の時代 (2023)</span>
+              <h3 class="stele-title">Webアプリ開発とチーム開発の基礎確立</h3>
+              <span class="stele-place">チームプロジェクト / 教育支援アプリ企画</span>
               <p>
-                仲間と共にプロダクトを創出する楽しさを知り、Figmaによるワイヤーフレーム設計からコード実装までを一気通貫で担当。Gitフローと協調作業の真髄を体得。
+                React, Node.js, ExpressによるフルスタックなWebアプリケーション開発に着手。AI教育支援アプリのチーム開発では、教育現場への実用性と著作権・倫理面への配慮を盛り込んだ仕様検討を推進。
               </p>
             </div>
           </div>
 
-          <!-- 年代 3 -->
+          <!-- 年代 3: 2022 -->
           <div class="stele-item reveal delay-2">
             <div class="stele-marker">
               <span class="stele-glyph">𓊹</span>
             </div>
             <div class="stele-box stone-slab">
               <span class="stele-era"><i class="fa-regular fa-sun"></i> 開眼の時代 (2022)</span>
-              <h3 class="stele-title">計算機科学の門戸を叩く</h3>
+              <h3 class="stele-title">計算機科学の門戸・Java & Pythonの修得</h3>
               <span class="stele-place">東京電機大学 入学</span>
               <p>
-                プログラミングの基礎（C、Python、Web技術）とアルゴリズムを修得。「ゼロから世界を記述できる」コードの力に魅了され、Webフロントエンドへの道が開く。
+                Java, Python, JavaScript, HTML/CSSを授業および演習を通じて体系的に学習。オブジェクト指向やアルゴリズム、データベースの基礎を築き、コードによるものづくりの世界へ踏み出す。
               </p>
             </div>
           </div>
@@ -745,7 +921,7 @@
         <div class="stone-header reveal">
           <span class="sacred-symbol">𓂀</span>
           <span class="section-tag">SEND AN EMISSARY</span>
-          <h2 class="section-title">書記官への伝令</h2>
+          <h2 class="section-title">書記官への伝令碑</h2>
           <div class="hieroglyph-sub">𓋹 新たな制作の儀礼、語らいの使者を歓迎します 𓋹</div>
         </div>
 
@@ -757,7 +933,7 @@
               <h3>使者を送るにあたって</h3>
             </div>
             <p>
-              新たなWeb制作の協業、デザインのご相談、旅の語らいなど、どのような伝言でも喜んで拝読いたします。パピルスをしたためるように、お気軽にお送りください。
+              LLMマルチエージェント開発、Webバックエンド構築、リアルタイム通信、フロントエンド開発のご相談など、どのような伝言でも喜んで拝読いたします。
             </p>
 
             <div class="shrine-contacts">
@@ -789,7 +965,7 @@
             </div>
           </div>
 
-          <!-- パピルス羊皮紙風の問い合わせフォーム -->
+          <!-- 問い合わせフォーム -->
           <div class="papyrus-form-card stone-slab reveal delay-1">
             <form id="contact-form" class="egypt-form">
               <div class="form-row">
@@ -839,13 +1015,13 @@
   <!-- 最下部フッター（神殿の土台） -->
   <footer class="temple-footer">
     <div class="container footer-content">
-      <div class="footer-ankh">☥ 𓋹 𓂀 𓆃 ☥</div>
-      <p class="footer-scribe">Written upon Papyrus & Digital Stone by Yoshika Fukuyama</p>
+      <div class="footer-ankh">☥ 𓋹 𓂀 𓆃 𓊹 𓆣 ☥</div>
+      <p class="footer-scribe">Written upon Ancient Papyrus & Digital Stone by Yoshika Fukuyama</p>
       <p class="footer-sub">&copy; <span id="year"></span> Yoshika Fukuyama. May your life be endowed with Ankh, Udjat, and Seneb (生命・健全・健康).</p>
     </div>
   </footer>
 
-  <!-- ページトップ戻るボタン（スカラベ/オベリスク） -->
+  <!-- ページトップ戻るボタン -->
   <button id="back-to-top" class="back-to-top egypt-top-btn" aria-label="神殿の頂へ戻る" title="頂へ昇る">
     <span>𓆃</span>
   </button>
