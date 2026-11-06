@@ -678,23 +678,91 @@ body.dark-theme .ancient-mural-tableau {
   gap: 50px;
 }
 
-/* ヒーロー最上部キャッチ（古代エジプト風ポートフォリオ） */
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-serif);
-  font-size: 0.92rem;
-  letter-spacing: 0.2em;
-  color: var(--turquoise);
-  margin-bottom: 14px;
-  font-weight: 700;
-  text-shadow: 0 0 10px var(--turquoise-glow);
+/* --------------------------------------------------------------------------
+   5. Hero Section (Grand Monumental Cartouche Banner & Scribe Mural)
+   -------------------------------------------------------------------------- */
+/* 最強調：特大の黄金カルトゥーシュ巨碑看板 */
+.grand-monument-banner {
+  margin-bottom: 24px;
 }
 
-.hero-eyebrow .eyebrow-glyph {
-  font-size: 1.15rem;
+.monument-cartouche {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.22) 0%, rgba(13, 148, 136, 0.15) 100%);
+  border: 3px solid var(--gold);
+  border-radius: 40px;
+  box-shadow: 0 0 24px var(--gold-glow), inset 0 0 14px rgba(212, 175, 55, 0.25);
+  position: relative;
+  transition: var(--transition);
+}
+
+.monument-cartouche:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px var(--gold-glow);
+}
+
+.monument-glyph-side {
+  font-size: 1.5rem;
   color: var(--gold);
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 12px var(--gold-glow);
+}
+
+.monument-text-group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.monument-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--turquoise);
+  font-weight: 700;
+}
+
+.monument-main {
+  font-family: var(--font-decor);
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  line-height: 1.25;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@media (max-width: 768px) {
+  .monument-cartouche {
+    padding: 10px 18px;
+    gap: 10px;
+  }
+  .monument-main {
+    font-size: 1.5rem;
+  }
+  .monument-glyph-side {
+    font-size: 1.1rem;
+  }
+}
+
+/* カルトゥーシュ名牌の強調タグ */
+.nameplate-prominent-tag {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 4px;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 3px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--gold);
 }
 
 /* カルトゥーシュ銘板バッジ（ファラオの楕円枠） */
