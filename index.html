@@ -3,51 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Yoshika Fukuyama</title>
-  <meta name="description" content="爽やかな青緑系統の洗練されたポートフォリオサイトです。スキル、制作物、経歴をご紹介します。">
-  
-  <!-- Google Fonts -->
+  <title>古代エジプト壁画録 | Yoshika Fukuyama Portfolio</title>
+  <meta name="description" content="悠久のナイルの風をまとう、古代エジプト壁画風ポートフォリオ。デジタル書記官が刻む制作物と旅の記録。">
+
+  <!-- Google Fonts: 古代石碑・壁画の格調を高めるフォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Shippori+Mincho:wght@400;600;800&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- 背景装飾用のグローエフェクト -->
-  <div class="glow-orb orb-1" aria-hidden="true"></div>
-  <div class="glow-orb orb-2" aria-hidden="true"></div>
-  <div class="glow-orb orb-3" aria-hidden="true"></div>
+<body class="egypt-theme">
+  <!-- パピルスと砂岩のテクスチャ背景オーバレイ -->
+  <div class="sand-texture" aria-hidden="true"></div>
+  <div class="torch-glow torch-left" aria-hidden="true"></div>
+  <div class="torch-glow torch-right" aria-hidden="true"></div>
 
-  <!-- ナビゲーションバー -->
-  <header class="header" id="header">
+  <!-- 最上部の壁画装飾ボーダー（ヒエログリフ・フリーズ） -->
+  <div class="hieroglyph-border top-border" aria-hidden="true">
+    <span>𓋹</span><span>𓍯</span><span>𓊹</span><span>𓆃</span><span>𓁀</span><span>𓃠</span><span>𓅓</span><span>𓏤</span><span>𓌃</span><span>𓎛</span><span>𓋹</span><span>𓍯</span><span>𓊹</span><span>𓆃</span><span>𓁀</span><span>𓃠</span><span>𓅓</span><span>𓏤</span><span>𓌃</span><span>𓎛</span>
+  </div>
+
+  <!-- ナビゲーションバー（神殿の梁風） -->
+  <header class="temple-header" id="header">
     <div class="container nav-container">
-      <a href="#hero" class="logo">
-        <span class="logo-mark"><i class="fa-solid fa-seedling"></i></span>
-        <span class="logo-text">Portfolio<span class="dot">.</span></span>
+      <a href="#hero" class="egypt-logo">
+        <span class="ankh-symbol">☥</span>
+        <div class="logo-titles">
+          <span class="logo-main">YOSHIKA</span>
+          <span class="logo-sub">SCRIBE & WAYFARER</span>
+        </div>
       </a>
 
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-          <li class="nav-item"><a href="#works" class="nav-link">Works</a></li>
-          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link nav-btn">Contact</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><span class="nav-glyph">𓁀</span> 我が素性 (About)</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><span class="nav-glyph">𓌃</span> 術と道具 (Skills)</a></li>
+          <li class="nav-item"><a href="#works" class="nav-link"><span class="nav-glyph">𓊹</span> 石碑・作品 (Works)</a></li>
+          <li class="nav-item"><a href="#travel" class="nav-link"><span class="nav-glyph">𓊝</span> 旅路の記録 (Travel)</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link"><span class="nav-glyph">𓍯</span> 年代記 (Chronicle)</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link nav-btn"><span class="nav-glyph">𓂀</span> 伝令 (Contact)</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <!-- テーマ切り替えトグル -->
-        <button id="theme-toggle" class="icon-button" aria-label="テーマを切り替える">
-          <i class="fa-solid fa-moon"></i>
+        <!-- 砂嵐 / 松明エフェクト切り替え -->
+        <button id="theme-toggle" class="icon-button" aria-label="日輪・月夜の儀式を切り替える" title="昼夜の儀式">
+          <i class="fa-solid fa-sun"></i>
         </button>
         <!-- モバイルハンバーガーボタン -->
-        <button id="mobile-toggle" class="mobile-toggle" aria-label="メニューを開く">
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="神殿の扉を開く">
           <span></span>
           <span></span>
           <span></span>
@@ -57,181 +66,226 @@
   </header>
 
   <main>
-    <!-- ヒーローセクション -->
+    <!-- ヒーローセクション：壁画レリーフ風のメインビジュアル -->
     <section class="hero section" id="hero">
       <div class="container hero-container">
         <div class="hero-content reveal">
-          <div class="badge">
-            <span class="pulse-dot"></span>
-            <span>Available for new projects</span>
+          <!-- カルトゥーシュ枠（ファラオの銘板） -->
+          <div class="cartouche-badge">
+            <span class="glyph-ankh">☥</span>
+            <span class="cartouche-text">DIGITAL SCRIBE OF MODERN AGE</span>
+            <span class="glyph-ankh">☥</span>
           </div>
+
           <h1 class="hero-title">
-            Crafting Digital Experiences with 
-            <span class="gradient-text">Clean & Fresh</span> Vision.
+            悠久のナイルの如く、<br>
+            <span class="gold-gradient-text">美しき秩序とコード</span>を<br>
+            石板に刻む者。
           </h1>
+
           <p class="hero-description">
-            こんにちは！テクノロジーとデザインで課題をスマートに解決するクリエイターです。<br>
-            シンプルで透明感のあるUI/UXデザインと、快適なWebフロントエンド開発を得意としています。
+            古代エジプトの書記官（Scribe）の精神を宿し、現代のデジタル空間に秩序と美を構築するクリエイター。<br>
+            未知の大地を巡る<strong>「旅」</strong>を愛し、エジプシャンブルーと碧緑（ターコイズ）の風をWebフロントエンドとUIデザインに注ぎ込みます。
           </p>
+
           <div class="hero-buttons">
-            <a href="#works" class="btn btn-primary">
-              <span>実績・作品を見る</span>
-              <i class="fa-solid fa-arrow-right"></i>
+            <a href="#works" class="btn btn-egypt-gold">
+              <i class="fa-solid fa-scroll"></i>
+              <span>刻まれし実績を観る</span>
             </a>
-            <a href="#contact" class="btn btn-outline">
-              <span>お問い合わせ</span>
-              <i class="fa-regular fa-envelope"></i>
+            <a href="#travel" class="btn btn-egypt-lapis">
+              <i class="fa-solid fa-compass"></i>
+              <span>旅路の記録</span>
             </a>
           </div>
-          
-          <div class="hero-socials">
-            <span class="social-label">Follow me:</span>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://qiita.com" target="_blank" rel="noopener noreferrer" aria-label="Qiita"><i class="fa-solid fa-code"></i></a>
-            <a href="mailto:example@domain.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+
+          <!-- 壁画風オーナメント -->
+          <div class="mural-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">𓋹 𓂀 𓆃</span>
+            <span class="divider-line"></span>
           </div>
         </div>
 
+        <!-- ヒーロービジュアル：エジプト壁画風肖像フレーム -->
         <div class="hero-visual reveal delay-1">
-          <div class="hero-card-wrapper">
-            <div class="hero-profile-card glass-panel">
-              <div class="profile-avatar">
-                <!-- アバターアイコンまたは画像 -->
-                <div class="avatar-inner">
-                  <i class="fa-solid fa-user-astronaut"></i>
-                </div>
-              </div>
-              <div class="profile-info">
-                <h3>Yoshika Fukuyama</h3>
-                <p class="role">Engineer & UI Designer</p>
-                <div class="status-pill">
-                  <i class="fa-solid fa-location-dot"></i> Tokyo, Japan
-                </div>
-              </div>
-              <div class="quick-stats">
-                <div class="stat-item">
-                  <span class="stat-number">15+</span>
-                  <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                  <span class="stat-number">3+</span>
-                  <span class="stat-label">Years Exp</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                  <span class="stat-number">100%</span>
-                  <span class="stat-label">Passion</span>
-                </div>
-              </div>
-            </div>
+          <div class="mural-frame">
+            <!-- 四隅の装飾金具風 -->
+            <div class="corner-ornament top-l"></div>
+            <div class="corner-ornament top-r"></div>
+            <div class="corner-ornament btm-l"></div>
+            <div class="corner-ornament btm-r"></div>
 
-            <!-- フローティングバッジ -->
-            <div class="floating-badge badge-top glass-panel">
-              <i class="fa-solid fa-code icon-teal"></i>
-              <div>
-                <small>Frontend</small>
-                <strong>Modern Web</strong>
+            <div class="mural-inner">
+              <div class="sun-disk-halo"></div>
+              
+              <!-- 壁画風の横顔シルエット・イラスト -->
+              <div class="pharaoh-portrait">
+                <svg viewBox="0 0 200 240" class="portrait-svg" xmlns="http://www.w3.org/2000/svg">
+                  <!-- エジプト壁画風の幾何学パターン＆ホルス・書記官のシンボリック造形 -->
+                  <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f6d365" />
+                      <stop offset="50%" stop-color="#fda085" />
+                      <stop offset="100%" stop-color="#d4af37" />
+                    </linearGradient>
+                    <linearGradient id="lapisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#144d6b" />
+                      <stop offset="50%" stop-color="#0f766e" />
+                      <stop offset="100%" stop-color="#0d9488" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <!-- 日輪とウラエウス（蛇）の冠 -->
+                  <circle cx="100" cy="50" r="32" fill="url(#goldGrad)" />
+                  <path d="M100 18 Q105 5 100 2" stroke="#d4af37" stroke-width="4" fill="none"/>
+                  
+                  <!-- ネメス頭巾（青と金の縞） -->
+                  <path d="M55 70 Q100 45 145 70 L160 145 Q150 165 130 170 L130 120 L70 120 L70 170 Q50 165 40 145 Z" fill="url(#lapisGrad)" stroke="#d4af37" stroke-width="2"/>
+                  <!-- 縞模様 -->
+                  <path d="M60 85 L140 85 M65 100 L135 100 M68 115 L132 115" stroke="#f6d365" stroke-width="3" stroke-linecap="round"/>
+                  
+                  <!-- 壁画特有の横顔輪郭 -->
+                  <path d="M85 85 L112 85 L118 100 L110 106 L118 120 L102 124 L96 150 L80 150 Z" fill="#e8c298" stroke="#7a4b26" stroke-width="2"/>
+                  
+                  <!-- ホルスの目（アイメイク） -->
+                  <g transform="translate(102, 92) scale(0.65)">
+                    <path d="M0 8 Q12 -2 24 8 Q12 18 0 8 Z" fill="#241c14" stroke="#d4af37" stroke-width="1.5"/>
+                    <circle cx="12" cy="8" r="4" fill="#0d9488"/>
+                    <path d="M24 8 L32 16 M12 18 L12 28 Q8 32 4 28" stroke="#241c14" stroke-width="2.5" fill="none"/>
+                  </g>
+                  
+                  <!-- 首飾り（ウェセク・襟飾り） -->
+                  <path d="M60 160 Q100 190 140 160 L145 185 Q100 220 55 185 Z" fill="url(#goldGrad)" stroke="#134e4a" stroke-width="3"/>
+                  <path d="M68 172 Q100 198 132 172" stroke="#0d9488" stroke-width="4" stroke-dasharray="4 4"/>
+                </svg>
               </div>
-            </div>
 
-            <div class="floating-badge badge-bottom glass-panel">
-              <i class="fa-solid fa-palette icon-emerald"></i>
-              <div>
-                <small>Design</small>
-                <strong>Clean UI/UX</strong>
+              <!-- 枠下のカルトゥーシュ名牌 -->
+              <div class="cartouche-nameplate">
+                <span class="cartouche-border-inner">
+                  <span class="hieroglyph-name">𓆃 𓏤 𓎛 𓋹 𓌃</span>
+                  <span class="nameplate-kanji">福山 佳</span>
+                  <small>Yoshika Fukuyama</small>
+                </span>
+              </div>
+
+              <div class="pyramid-seal">
+                <span>☥ SCRIBE ☥</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <a href="#about" class="scroll-indicator" aria-label="下にスクロール">
-        <span class="mouse">
-          <span class="wheel"></span>
-        </span>
-        <span class="scroll-text">Scroll Down</span>
+      <a href="#about" class="scroll-papyrus" aria-label="パピルスを読み進める">
+        <span class="feather-icon">𓆃</span>
+        <span class="scroll-caption">Scroll Down to Unroll</span>
       </a>
     </section>
 
-    <!-- About セクション -->
+    <!-- About セクション：我が素性と信念 -->
     <section class="about section" id="about">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">About Me</span>
-          <h2 class="section-title">私について</h2>
-          <p class="section-subtitle">ユーザー視点に立ち、爽やかで心地よいデジタル体験を形にします</p>
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓂀</span>
+          <span class="section-tag">HERITAGE & ESSENCE</span>
+          <h2 class="section-title">我が素性、そして求道</h2>
+          <div class="hieroglyph-sub">𓋹 永遠の秩序（マアト）を重んじるデジタル書記官 𓋹</div>
         </div>
 
         <div class="about-grid">
-          <div class="about-content reveal">
-            <h3>技術と美しさのバランスを大切にする</h3>
+          <div class="about-papyrus-card stone-slab reveal">
+            <div class="slab-engraving-top">
+              <span>𓊹 𓌃 𓁀 𓋹 𓍯 𓎛</span>
+            </div>
+
+            <h3 class="slab-heading">「マアト（秩序と調和）」をコードに宿す</h3>
             <p>
-              大学で情報科学・工学を専攻し、Webフロントエンドやユーザーインターフェースのデザイン・実装に取り組んでいます。
-              見やすくストレスのない導線設計、青緑色を基調とした爽やかで清潔感あるビジュアル作りを得意としています。
+              古代エジプトにおいて、書記官（スクライブ）は神々の言葉をパピルスや神殿の石壁に記録し、国家の秩序を保つ最も崇高な専門職でした。
             </p>
             <p>
-              趣味は<strong>旅行</strong>。国内・海外問わず新しい景色や文化に触れることが好きで、旅先で出会う雄大な自然や海、澄んだ空気の心地よさを、Webデザインの色彩や開放感のあるレイアウトに還元しています。
+              私は東京電機大学で情報工学を学びながら、現代のWeb空間という無限のパピルスに、乱れのない美しいコードとUIを刻むエンジニア・デザイナーです。
+            </p>
+            <p>
+              画面を開いた瞬間に心奪われるような爽やかな碧緑（エジプシャングリーン・ターコイズ）の色彩設計、ミリ単位の余白が織りなす黄金比のレイアウト。それらを最新のフロントエンド技術で実装します。
             </p>
 
-            <div class="about-features">
-              <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <div class="tenets-list">
+              <div class="tenet-item">
+                <div class="tenet-glyph">𓁀</div>
                 <div>
-                  <h4>直感的で美しいUI設計</h4>
-                  <p>余白と色彩の調和を追求した見やすいレイアウト</p>
+                  <h4>一、不変の美（黄金比のUI設計）</h4>
+                  <p>ピラミッドが数千年の風雪に耐えるように、時代に左右されない洗練されたインターフェースを追求します。</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-plane-departure"></i></div>
+              <div class="tenet-item">
+                <div class="tenet-glyph">𓊝</div>
                 <div>
-                  <h4>旅から得るインスピレーション</h4>
-                  <p>自然や旅先の空気感を取り入れた、開放的で心地よい世界観</p>
+                  <h4>二、ナイルの舟（旅路からの霊感）</h4>
+                  <p>見知らぬ大地や遺跡を旅し、そこで受ける自然の雄大さと清涼感を、デザインの余白と発色に転換します。</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+              <div class="tenet-item">
+                <div class="tenet-glyph">𓌃</div>
                 <div>
-                  <h4>軽快で快適なパフォーマンス</h4>
-                  <p>高速な読み込みと滑らかなアニメーションの実装</p>
+                  <h4>三、神聖なる記述（堅牢なフロントエンド）</h4>
+                  <p>TypeScript、React、アクセシビリティ標準を遵守し、誰もが軽快に読解・操作できる堅牢な実装を行います。</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="about-card glass-panel reveal delay-1">
-            <h4 class="card-title"><i class="fa-solid fa-address-card"></i> Profile Summary</h4>
-            <ul class="profile-list">
+          <!-- 石板プロフィールサマリー -->
+          <div class="profile-tablet stone-slab reveal delay-1">
+            <div class="cartouche-header">
+              <span class="cartouche-ring">𓍯</span>
+              <h4>書記官の銘録</h4>
+              <span class="cartouche-ring">𓍯</span>
+            </div>
+
+            <ul class="hieroglyph-list">
               <li>
-                <span class="label">名前</span>
-                <span class="val">福山 佳 / Yoshika Fukuyama</span>
+                <span class="h-icon">𓀀</span>
+                <div class="h-content">
+                  <span class="h-label">俗名・真名</span>
+                  <span class="h-value">福山 佳 (Yoshika Fukuyama)</span>
+                </div>
               </li>
               <li>
-                <span class="label">所属</span>
-                <span class="val">東京電機大学 (Tokyo Denki Univ.)</span>
+                <span class="h-icon">𓉐</span>
+                <div class="h-content">
+                  <span class="h-label">学術の神殿</span>
+                  <span class="h-value">東京電機大学 (Tokyo Denki Univ.)</span>
+                </div>
               </li>
               <li>
-                <span class="label">拠点</span>
-                <span class="val">東京 (Tokyo, Japan)</span>
+                <span class="h-icon">𓈓</span>
+                <div class="h-content">
+                  <span class="h-label">座所（拠点）</span>
+                  <span class="h-value">日出づる国・東京 (Tokyo, Japan)</span>
+                </div>
               </li>
               <li>
-                <span class="label">専門分野</span>
-                <span class="val">Web Front-end, UI/UX Design</span>
+                <span class="h-icon">𓌃</span>
+                <div class="h-content">
+                  <span class="h-label">司る術</span>
+                  <span class="h-value">Webフロントエンド, UI/UXデザイン</span>
+                </div>
               </li>
               <li>
-                <span class="label">興味・関心</span>
-                <span class="val">React / Next.js, TypeScript, デザインシステム</span>
-              </li>
-              <li>
-                <span class="label">趣味</span>
-                <span class="val">旅行（国内・海外の一人旅）、カメラ・写真、カフェ</span>
+                <span class="h-icon">𓊝</span>
+                <div class="h-content">
+                  <span class="h-label">至高の道楽</span>
+                  <span class="h-value gold-text">国内外の放浪・一人旅、悠久の風景撮影</span>
+                </div>
               </li>
             </ul>
 
-            <div class="download-resume">
-              <a href="#contact" class="btn btn-primary btn-block">
-                <i class="fa-solid fa-paper-plane"></i> メッセージを送る
+            <div class="tablet-footer">
+              <a href="#contact" class="btn btn-egypt-gold btn-block">
+                <i class="fa-solid fa-scroll"></i>
+                <span>伝令を送る（Contact）</span>
               </a>
             </div>
           </div>
@@ -239,332 +293,339 @@
       </div>
     </section>
 
-    <!-- Skills セクション -->
+    <!-- Skills セクション：石版に刻まれし術と道具 -->
     <section class="skills section" id="skills">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Skills & Tools</span>
-          <h2 class="section-title">スキルセット</h2>
-          <p class="section-subtitle">これまで学んできた技術スタックと活用ツール</p>
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓌃</span>
+          <span class="section-tag">SACRED TECHNIQUES</span>
+          <h2 class="section-title">書記官が操る術と呪具</h2>
+          <div class="hieroglyph-sub">𓊹 現代のコードを紡ぐための技術体系 𓊹</div>
         </div>
 
         <div class="skills-grid">
-          <!-- フロントエンド -->
-          <div class="skill-category glass-panel reveal">
-            <div class="category-header">
-              <div class="cat-icon"><i class="fa-brands fa-html5"></i></div>
-              <h3>Front-end</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
+          <!-- 碑文 1: フロントエンド -->
+          <div class="skill-slab stone-slab reveal">
+            <div class="slab-badge"><span class="badge-glyph">𓁀</span> 表層の術</div>
+            <h3 class="skill-category-title">Front-end Arts</h3>
+            <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
+
+            <div class="skill-meters">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>HTML5 / CSS3 / Sass</span>
-                  <span class="skill-pct">90%</span>
+                  <span class="meter-glyph">𓆃 90%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 90%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 90%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>JavaScript (ES6+)</span>
-                  <span class="skill-pct">85%</span>
+                  <span class="meter-glyph">𓋹 85%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 85%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>TypeScript</span>
-                  <span class="skill-pct">75%</span>
+                  <span class="meter-glyph">𓂀 75%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 75%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>React / Next.js</span>
-                  <span class="skill-pct">80%</span>
+                  <span class="meter-glyph">𓊹 80%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 80%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 80%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>Tailwind CSS</span>
-                  <span class="skill-pct">85%</span>
+                  <span class="meter-glyph">𓌃 85%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 85%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
               </div>
             </div>
           </div>
 
-          <!-- バックエンド & その他 -->
-          <div class="skill-category glass-panel reveal delay-1">
-            <div class="category-header">
-              <div class="cat-icon"><i class="fa-solid fa-server"></i></div>
-              <h3>Back-end & DB</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
+          <!-- 碑文 2: バックエンド & データベース -->
+          <div class="skill-slab stone-slab reveal delay-1">
+            <div class="slab-badge"><span class="badge-glyph">𓉐</span> 深層の基礎</div>
+            <h3 class="skill-category-title">Back-end & Vaults</h3>
+            <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
+
+            <div class="skill-meters">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>Node.js / Express</span>
-                  <span class="skill-pct">70%</span>
+                  <span class="meter-glyph">𓅓 70%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 70%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 70%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>Python / FastAPI</span>
-                  <span class="skill-pct">65%</span>
+                  <span class="meter-glyph">𓆃 65%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 65%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 65%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span>SQL / PostgreSQL / MySQL</span>
-                  <span class="skill-pct">70%</span>
+              <div class="meter-item">
+                <div class="meter-head">
+                  <span>SQL / PostgreSQL / Supabase</span>
+                  <span class="meter-glyph">𓊹 75%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 70%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span>Supabase / Firebase</span>
-                  <span class="skill-pct">75%</span>
-                </div>
-                <div class="progress-bar"><div class="progress" style="--val: 75%;"></div></div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>REST API / GraphQL</span>
-                  <span class="skill-pct">75%</span>
+                  <span class="meter-glyph">𓋹 75%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 75%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 75%;"></div></div>
+              </div>
+              <div class="meter-item">
+                <div class="meter-head">
+                  <span>Firebase / Cloud Auth</span>
+                  <span class="meter-glyph">𓂀 70%</span>
+                </div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 70%;"></div></div>
               </div>
             </div>
           </div>
 
-          <!-- ツール・デザイン -->
-          <div class="skill-category glass-panel reveal delay-2">
-            <div class="category-header">
-              <div class="cat-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-              <h3>Design & Tools</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span>Figma (UI/UX Design)</span>
-                  <span class="skill-pct">85%</span>
+          <!-- 碑文 3: 意匠 & 呪具（デザイン・ツール） -->
+          <div class="skill-slab stone-slab reveal delay-2">
+            <div class="slab-badge"><span class="badge-glyph">𓎛</span> 意匠と道具</div>
+            <h3 class="skill-category-title">Design & Instruments</h3>
+            <div class="hieroglyph-divider">𓏤 𓏤 𓏤</div>
+
+            <div class="skill-meters">
+              <div class="meter-item">
+                <div class="meter-head">
+                  <span>Figma (UI/UX 意匠図面)</span>
+                  <span class="meter-glyph">𓁀 85%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 85%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>Git / GitHub</span>
-                  <span class="skill-pct">85%</span>
+                  <span class="meter-glyph">𓌃 85%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 85%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
+              <div class="meter-item">
+                <div class="meter-head">
                   <span>VS Code / Cursor</span>
-                  <span class="skill-pct">90%</span>
+                  <span class="meter-glyph">𓊹 90%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 90%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 90%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span>Docker (Basic)</span>
-                  <span class="skill-pct">60%</span>
+              <div class="meter-item">
+                <div class="meter-head">
+                  <span>Docker (コンテナ運用の初歩)</span>
+                  <span class="meter-glyph">𓍯 60%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 60%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 60%;"></div></div>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span>Vercel / Cloudflare</span>
-                  <span class="skill-pct">80%</span>
+              <div class="meter-item">
+                <div class="meter-head">
+                  <span>Vercel / GitHub Pages</span>
+                  <span class="meter-glyph">𓋹 85%</span>
                 </div>
-                <div class="progress-bar"><div class="progress" style="--val: 80%;"></div></div>
+                <div class="meter-track"><div class="meter-fill" style="--val: 85%;"></div></div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- スキルタグクラウド -->
-        <div class="skills-tags-wrapper reveal">
-          <span class="tag-title">Other Keywords:</span>
-          <div class="tag-list">
-            <span class="tag">Responsive Web Design</span>
-            <span class="tag">UI/UX</span>
-            <span class="tag">Clean Code</span>
-            <span class="tag">Performance Tuning</span>
-            <span class="tag">CSS Grid & Flexbox</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Agile / Scrum</span>
+        <!-- ヒエログリフ・キーワード護符 -->
+        <div class="amulet-wrapper reveal">
+          <span class="amulet-title">護符と銘文（Keywords）:</span>
+          <div class="amulet-list">
+            <span class="amulet">𓋹 Responsive Design</span>
+            <span class="amulet">𓂀 Ma'at Clean Architecture</span>
+            <span class="amulet">𓆃 High Performance</span>
+            <span class="amulet">𓊹 Turquoise & Lapis Palette</span>
+            <span class="amulet">𓌃 Semantic Markup</span>
+            <span class="amulet">𓊝 Wanderlust Spirit</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Works / Projects セクション -->
+    <!-- Works セクション：石碑に奉納されし制作物 -->
     <section class="works section" id="works">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Featured Works</span>
-          <h2 class="section-title">制作実績・プロジェクト</h2>
-          <p class="section-subtitle">これまでに制作した代表的なWebサイトやアプリケーションです</p>
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓊹</span>
+          <span class="section-tag">SACRED RELIEFS & WORKS</span>
+          <h2 class="section-title">奉納石板・制作録</h2>
+          <div class="hieroglyph-sub">𓍯 現代に遺すアプリケーションと意匠の結晶 𓍯</div>
         </div>
 
-        <!-- フィルターボタン -->
-        <div class="works-filter reveal">
-          <button class="filter-btn active" data-filter="all">すべて</button>
-          <button class="filter-btn" data-filter="web">Webサイト</button>
-          <button class="filter-btn" data-filter="app">Webアプリ</button>
-          <button class="filter-btn" data-filter="ui">UIデザイン</button>
+        <!-- 壁画風フィルター -->
+        <div class="egypt-filter reveal">
+          <button class="filter-tab active" data-filter="all"><span class="tab-glyph">𓋹</span> 全ての石板</button>
+          <button class="filter-tab" data-filter="app"><span class="tab-glyph">𓊹</span> 術式アプリ</button>
+          <button class="filter-tab" data-filter="web"><span class="tab-glyph">𓁀</span> 神殿ウェブ</button>
+          <button class="filter-tab" data-filter="ui"><span class="tab-glyph">𓌃</span> 意匠図面 (UI)</button>
         </div>
 
         <div class="works-grid">
-          <!-- 制作物 1 -->
-          <article class="work-card glass-panel reveal" data-category="app">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-teal">
-                <i class="fa-solid fa-map-location-dot"></i>
+          <!-- 制作物 1: TabiLog (旅アプリ) -->
+          <article class="relief-card stone-slab reveal" data-category="app">
+            <div class="relief-header">
+              <div class="relief-art relief-nile">
+                <div class="hieroglyph-bg-pattern">𓊝 𓈓 𓊝 𓈓</div>
+                <i class="fa-solid fa-map-location-dot mural-icon"></i>
               </div>
-              <span class="work-badge">Webアプリ</span>
+              <div class="relief-seal">𓊝 旅路</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>React</span>
-                <span>Mapbox / Leaflet</span>
+                <span>Mapbox</span>
                 <span>Tailwind</span>
               </div>
-              <h3 class="work-title">TabiLog - 旅の思い出＆ルート記録アプリ</h3>
-              <p class="work-desc">
-                訪れた観光地や景勝地の写真・メモをマップ上にピン留めし、自分だけの旅行記を整理できるWebアプリケーション。青緑の清涼感ある旅情UIが特徴。
+              <h3 class="relief-title">TabiLog - 旅の足跡と記憶の石板</h3>
+              <p class="relief-desc">
+                放浪の旅路で出会った風景や神殿の記憶をマップに刻み、航海録として振り返ることができる旅アプリ。青緑の清涼なナイルの風をデザインに取り入れました。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('旅のデモ記録サンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 2 -->
-          <article class="work-card glass-panel reveal delay-1" data-category="app">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-cyan">
-                <i class="fa-solid fa-list-check"></i>
+          <!-- 制作物 2: TaskFlow (カンバンアプリ) -->
+          <article class="relief-card stone-slab reveal delay-1" data-category="app">
+            <div class="relief-header">
+              <div class="relief-art relief-turquoise">
+                <div class="hieroglyph-bg-pattern">𓊹 𓌃 𓊹 𓌃</div>
+                <i class="fa-solid fa-list-check mural-icon"></i>
               </div>
-              <span class="work-badge">Webアプリ</span>
+              <div class="relief-seal">𓌃 秩序</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>React</span>
                 <span>TypeScript</span>
-                <span>Tailwind</span>
+                <span>DnD</span>
               </div>
-              <h3 class="work-title">TaskFlow - ミニマルタスク管理アプリ</h3>
-              <p class="work-desc">
-                ドラッグ&ドロップで直感的に進捗管理ができるカンバンボード。集中力を阻害しないクリーンなダーク&ライトテーマを実装。
+              <h3 class="relief-title">TaskFlow - 秩序のカンバンボード</h3>
+              <p class="relief-desc">
+                雑多な日々の業務を神聖なる「マアトの天秤」の如く整理する直感的タスク管理システム。ドラッグ＆ドロップで快適に進捗を整えます。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 3 -->
-          <article class="work-card glass-panel reveal delay-2" data-category="ui">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-emerald">
-                <i class="fa-solid fa-chart-line"></i>
+          <!-- 制作物 3: FinPulse (ダッシュボードUI) -->
+          <article class="relief-card stone-slab reveal delay-2" data-category="ui">
+            <div class="relief-header">
+              <div class="relief-art relief-gold">
+                <div class="hieroglyph-bg-pattern">𓋹 𓍯 𓋹 𓍯</div>
+                <i class="fa-solid fa-coins mural-icon"></i>
               </div>
-              <span class="work-badge">UIデザイン</span>
+              <div class="relief-seal">𓍯 財宝</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>Figma</span>
                 <span>UI/UX</span>
                 <span>Design System</span>
               </div>
-              <h3 class="work-title">FinPulse - 金融ダッシュボードUI</h3>
-              <p class="work-desc">
-                資産推移やポートフォリオ配分を一目で把握できるデータ可視化ダッシュボード。一貫性のあるコンポーネントシステムを構築。
+              <h3 class="relief-title">FinPulse - 黄金宝物庫の計数盤</h3>
+              <p class="relief-desc">
+                資産の増減や配分を美しきチャートで可視化する金融ダッシュボードUI。エジプシャンゴールドとラピスラズリの洗練された意匠システム。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Case Study</a>
-                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-figma"></i> Figma</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('Figmaケーススタディです'); return false;"><i class="fa-solid fa-eye"></i> 意匠図</a>
+                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-figma"></i> Figma</a>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 4 -->
-          <article class="work-card glass-panel reveal" data-category="app">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-bluegreen">
-                <i class="fa-solid fa-cloud-sun"></i>
+          <!-- 制作物 4: BreezeCast (天気予報アプリ) -->
+          <article class="relief-card stone-slab reveal" data-category="app">
+            <div class="relief-header">
+              <div class="relief-art relief-sky">
+                <div class="hieroglyph-bg-pattern">𓆃 𓇳 𓆃 𓇳</div>
+                <i class="fa-solid fa-cloud-sun mural-icon"></i>
               </div>
-              <span class="work-badge">Webアプリ</span>
+              <div class="relief-seal">𓆃 天候</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>Next.js</span>
-                <span>OpenWeather API</span>
+                <span>Weather API</span>
                 <span>Chart.js</span>
               </div>
-              <h3 class="work-title">BreezeCast - お天気予報＆服装提案</h3>
-              <p class="work-desc">
-                現在地や指定都市の天候をリアルタイム取得し、最適な服装や持ち物をアドバイスするスタイリッシュなお天気Webアプリケーション。
+              <h3 class="relief-title">BreezeCast - 太陽神ラーと天空の託宣</h3>
+              <p class="relief-desc">
+                各地の天候をリアルタイムに占うウェザーアプリケーション。砂漠の熱気から高原の爽やかな涼風まで、最適な旅装を提示します。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 5 -->
-          <article class="work-card glass-panel reveal delay-1" data-category="web">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-sea">
-                <i class="fa-solid fa-mug-saucer"></i>
+          <!-- 制作物 5: Verde Cafe (カフェLP) -->
+          <article class="relief-card stone-slab reveal delay-1" data-category="web">
+            <div class="relief-header">
+              <div class="relief-art relief-emerald">
+                <div class="hieroglyph-bg-pattern">𓁀 𓋹 𓁀 𓋹</div>
+                <i class="fa-solid fa-mug-saucer mural-icon"></i>
               </div>
-              <span class="work-badge">Webサイト</span>
+              <div class="relief-seal">𓋹 憩い</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>HTML / CSS</span>
                 <span>JavaScript</span>
-                <span>SEO対策</span>
+                <span>Parallax</span>
               </div>
-              <h3 class="work-title">Verde Cafe - カフェブランドLP</h3>
-              <p class="work-desc">
-                緑あふれるオーガニックカフェのブランドサイト。心地よいパララックス効果と写真を引き立てるクリーンなタイポグラフィ。
+              <h3 class="relief-title">Verde Oasis - オアシスカフェ銘碑</h3>
+              <p class="relief-desc">
+                旅人が喉を潤す緑あふれるオアシスをテーマにしたブランドWebサイト。滑らかなパララックス演出と清潔感あるタイポグラフィ。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-github"></i> GitHub</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('デモページのサンプルです'); return false;"><i class="fa-solid fa-eye"></i> 閲覧する</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-github"></i> 呪文源 (GitHub)</a>
               </div>
             </div>
           </article>
 
-          <!-- 制作物 6 -->
-          <article class="work-card glass-panel reveal delay-2" data-category="ui">
-            <div class="work-thumb">
-              <div class="thumb-gradient gradient-mint">
-                <i class="fa-solid fa-mobile-screen"></i>
+          <!-- 制作物 6: ZenHabit (モバイルUI) -->
+          <article class="relief-card stone-slab reveal delay-2" data-category="ui">
+            <div class="relief-header">
+              <div class="relief-art relief-lapislazuli">
+                <div class="hieroglyph-bg-pattern">𓂀 𓊹 𓂀 𓊹</div>
+                <i class="fa-solid fa-hourglass-start mural-icon"></i>
               </div>
-              <span class="work-badge">UIデザイン</span>
+              <div class="relief-seal">𓂀 習慣</div>
             </div>
-            <div class="work-body">
-              <div class="work-tags">
+            <div class="relief-body">
+              <div class="cartouche-tags">
                 <span>Figma</span>
                 <span>Mobile App</span>
-                <span>Prototyping</span>
+                <span>Micro-Interactions</span>
               </div>
-              <h3 class="work-title">ZenHabit - 習慣化トラッカーApp UI</h3>
-              <p class="work-desc">
-                小さな習慣をストレスなく継続するためのiOS/Android向けアプリUIデザイン。マイクロインタラクションによる達成感を演出。
+              <h3 class="relief-title">ZenHabit - 日々の修練トラッカーUI</h3>
+              <p class="relief-desc">
+                石を一つずつ積み上げるように良き習慣を育むモバイルUI設計。達成時の心地よいアニメーションで継続を後押しします。
               </p>
-              <div class="work-links">
-                <a href="#" class="link-btn" onclick="alert('デモページのサンプルリンクです'); return false;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Prototype</a>
-                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fa-brands fa-figma"></i> Figma</a>
+              <div class="relief-actions">
+                <a href="#" class="btn-hieroglyph" onclick="alert('Figmaプロトタイプです'); return false;"><i class="fa-solid fa-eye"></i> 試作鑑賞</a>
+                <a href="https://figma.com" target="_blank" rel="noopener noreferrer" class="btn-hieroglyph"><i class="fa-brands fa-figma"></i> Figma</a>
               </div>
             </div>
           </article>
@@ -572,51 +633,105 @@
       </div>
     </section>
 
-    <!-- タイムライン / 経歴 セクション -->
-    <section class="experience section" id="experience">
+    <!-- Travel セクション：旅路の壁画・放浪録 -->
+    <section class="travel section" id="travel">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Timeline & History</span>
-          <h2 class="section-title">これまでの歩み</h2>
-          <p class="section-subtitle">学びと開発の実績のタイムライン</p>
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓊝</span>
+          <span class="section-tag">VOYAGE OF THE SCRIBE</span>
+          <h2 class="section-title">書記官の放浪録（Travel Journal）</h2>
+          <div class="hieroglyph-sub">𓈓 未知の地を踏み、風と光を魂に刻む 𓈓</div>
         </div>
 
-        <div class="timeline">
-          <!-- アイテム 1 -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-panel">
-              <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2024 - Present</span>
-              <h3 class="timeline-title">モダンWeb開発 & デザインシステムの追求</h3>
-              <span class="timeline-org">東京電機大学 / 個人プロジェクト</span>
+        <div class="travel-mosaic">
+          <!-- 旅のエピソード 1: ナイル・水辺の旅 -->
+          <div class="travel-card stone-slab reveal">
+            <div class="travel-icon"><i class="fa-solid fa-water"></i></div>
+            <span class="travel-tag">𓈓 水と風の旅</span>
+            <h3 class="travel-title">碧き海と大河を巡る</h3>
+            <p>
+              波打ち際や大河沿いの街を歩くのが至高のひととき。海と空が溶け合う青緑のグラデーション、透き通る水面の揺らぎは、私のデザインパレットの原点です。
+            </p>
+            <div class="travel-badge-pill">#エジプシャンブルー #清涼の風</div>
+          </div>
+
+          <!-- 旅のエピソード 2: 遺跡・建築の美 -->
+          <div class="travel-card stone-slab reveal delay-1">
+            <div class="travel-icon"><i class="fa-solid fa-monument"></i></div>
+            <span class="travel-tag">𓉐 悠久の建造物</span>
+            <h3 class="travel-title">石造建築と歴史の探訪</h3>
+            <p>
+              何百年、何千年も風化に抗い立ち続ける神殿や街並みを訪ね、石の彫刻や幾何学的な柱の配置から「堅牢かつ美しい構造美」を学び取っています。
+            </p>
+            <div class="travel-badge-pill">#黄金比 #不変の造形</div>
+          </div>
+
+          <!-- 旅のエピソード 3: カメラと一人旅 -->
+          <div class="travel-card stone-slab reveal delay-2">
+            <div class="travel-icon"><i class="fa-solid fa-camera-retro"></i></div>
+            <span class="travel-tag">𓁀 瞬間の記録</span>
+            <h3 class="travel-title">レンズ越しに捉える光景</h3>
+            <p>
+              カメラを相棒に、ふと迷い込んだ路地の陰影や、夕暮れの空が金色に染まる刹那を記録。一期一会の感動が、次のWeb制作への活力となります。
+            </p>
+            <div class="travel-badge-pill">#一人旅 #光と影のパピルス</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chronicle セクション：年代記（タイムライン） -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓍯</span>
+          <span class="section-tag">CHRONICLES OF ASCENT</span>
+          <h2 class="section-title">年代記・歩みの記録</h2>
+          <div class="hieroglyph-sub">𓋹 学びと制作の歩みを刻む石柱 𓋹</div>
+        </div>
+
+        <div class="stele-timeline">
+          <!-- 年代 1 -->
+          <div class="stele-item reveal">
+            <div class="stele-marker">
+              <span class="stele-glyph">𓋹</span>
+            </div>
+            <div class="stele-box stone-slab">
+              <span class="stele-era"><i class="fa-regular fa-sun"></i> 現代・今まさに (2024 - Present)</span>
+              <h3 class="stele-title">モダンWebフロントエンドと意匠の極致へ</h3>
+              <span class="stele-place">東京電機大学 / 自主制作の探求</span>
               <p>
-                React, Next.js, TypeScriptを中心とした実践的なWeb開発に注力。コンポーネント指向の設計や、再利用性の高いUIライブラリの作成を研究・実践中。
+                React, Next.js, TypeScriptを用い、古代壁画の如き幾何学的美しさと現代の高性能を両立させたWebプロダクトの設計・開発に邁進中。
               </p>
             </div>
           </div>
 
-          <!-- アイテム 2 -->
-          <div class="timeline-item reveal delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-panel">
-              <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2023</span>
-              <h3 class="timeline-title">Webフロントエンド・UIデザインの本格始動</h3>
-              <span class="timeline-org">ハッカソン・自主制作活動</span>
+          <!-- 年代 2 -->
+          <div class="stele-item reveal delay-1">
+            <div class="stele-marker">
+              <span class="stele-glyph">𓌃</span>
+            </div>
+            <div class="stele-box stone-slab">
+              <span class="stele-era"><i class="fa-regular fa-sun"></i> 研鑽の時代 (2023)</span>
+              <h3 class="stele-title">ハッカソン挑戦とUI/UX設計の深化</h3>
+              <span class="stele-place">学内外プロジェクト・チーム開発</span>
               <p>
-                学内外のハッカソンやプロジェクトに参加し、UI/UXデザインからフロントエンドの実装までを一貫して担当。チーム開発やGitフローの経験を深める。
+                仲間と共にプロダクトを創出する楽しさを知り、Figmaによるワイヤーフレーム設計からコード実装までを一気通貫で担当。Gitフローと協調作業の真髄を体得。
               </p>
             </div>
           </div>
 
-          <!-- アイテム 3 -->
-          <div class="timeline-item reveal delay-2">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content glass-panel">
-              <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2022</span>
-              <h3 class="timeline-title">プログラミング & コンピュータサイエンスの基礎</h3>
-              <span class="timeline-org">大学入学</span>
+          <!-- 年代 3 -->
+          <div class="stele-item reveal delay-2">
+            <div class="stele-marker">
+              <span class="stele-glyph">𓊹</span>
+            </div>
+            <div class="stele-box stone-slab">
+              <span class="stele-era"><i class="fa-regular fa-sun"></i> 開眼の時代 (2022)</span>
+              <h3 class="stele-title">計算機科学の門戸を叩く</h3>
+              <span class="stele-place">東京電機大学 入学</span>
               <p>
-                アルゴリズム、データ構造、C言語、Python、Web基礎（HTML/CSS/JS）を学習。ものづくりの楽しさに目覚め、Web技術への傾倒がスタート。
+                プログラミングの基礎（C、Python、Web技術）とアルゴリズムを修得。「ゼロから世界を記述できる」コードの力に魅了され、Webフロントエンドへの道が開く。
               </p>
             </div>
           </div>
@@ -624,90 +739,93 @@
       </div>
     </section>
 
-    <!-- お問い合わせ セクション -->
+    <!-- Contact セクション：伝令・神殿への通信 -->
     <section class="contact section" id="contact">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag">Get in Touch</span>
-          <h2 class="section-title">お問い合わせ</h2>
-          <p class="section-subtitle">お仕事のご相談、ポートフォリオへの感想などお気軽にどうぞ</p>
+        <div class="stone-header reveal">
+          <span class="sacred-symbol">𓂀</span>
+          <span class="section-tag">SEND AN EMISSARY</span>
+          <h2 class="section-title">書記官への伝令</h2>
+          <div class="hieroglyph-sub">𓋹 新たな制作の儀礼、語らいの使者を歓迎します 𓋹</div>
         </div>
 
-        <div class="contact-wrapper">
-          <!-- 連絡先インフォ -->
-          <div class="contact-info glass-panel reveal">
-            <h3>Let's talk!</h3>
+        <div class="contact-shrine-grid">
+          <!-- 神殿の祭壇（連絡先） -->
+          <div class="shrine-info stone-slab reveal">
+            <div class="shrine-top">
+              <span class="shrine-ankh">☥</span>
+              <h3>使者を送るにあたって</h3>
+            </div>
             <p>
-              プロジェクトのコラボレーション、Web制作のご依頼、またはちょっとしたご挨拶でも大歓迎です。以下のフォーム、または各種SNSからご連絡ください。
+              新たなWeb制作の協業、デザインのご相談、旅の語らいなど、どのような伝言でも喜んで拝読いたします。パピルスをしたためるように、お気軽にお送りください。
             </p>
 
-            <div class="info-list">
-              <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="shrine-contacts">
+              <div class="shrine-contact-item">
+                <div class="s-icon">𓅓</div>
                 <div>
-                  <span class="info-title">Email</span>
+                  <span class="s-label">電脳伝令（Email）</span>
                   <a href="mailto:example@domain.com">example@domain.com</a>
                 </div>
               </div>
-              <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="shrine-contact-item">
+                <div class="s-icon">𓈓</div>
                 <div>
-                  <span class="info-title">Location</span>
-                  <span>Tokyo, Japan</span>
+                  <span class="s-label">現在の座所（Location）</span>
+                  <span>日出づる国・東京 (Tokyo, Japan)</span>
                 </div>
               </div>
-              <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-comments"></i></div>
+              <div class="shrine-contact-item">
+                <div class="s-icon">𓌃</div>
                 <div>
-                  <span class="info-title">Social</span>
-                  <div class="contact-socials">
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://qiita.com" target="_blank" rel="noopener noreferrer" aria-label="Qiita"><i class="fa-solid fa-code"></i></a>
+                  <span class="s-label">通信網（Socials）</span>
+                  <div class="egypt-social-links">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://qiita.com" target="_blank" rel="noopener noreferrer" title="Qiita"><i class="fa-solid fa-code"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- フォーム -->
-          <div class="contact-form-card glass-panel reveal delay-1">
-            <form id="contact-form" class="contact-form">
-              <div class="form-group">
-                <label for="name">お名前 <span class="required">*</span></label>
-                <div class="input-wrapper">
-                  <i class="fa-regular fa-user"></i>
+          <!-- パピルス羊皮紙風の問い合わせフォーム -->
+          <div class="papyrus-form-card stone-slab reveal delay-1">
+            <form id="contact-form" class="egypt-form">
+              <div class="form-row">
+                <label for="name">貴殿の尊名 (Name) <span class="required">*</span></label>
+                <div class="stone-input-wrap">
+                  <span class="input-glyph">𓁀</span>
                   <input type="text" id="name" name="name" placeholder="山田 太郎" required>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="email">メールアドレス <span class="required">*</span></label>
-                <div class="input-wrapper">
-                  <i class="fa-regular fa-envelope"></i>
+              <div class="form-row">
+                <label for="email">返書先電書 (Email) <span class="required">*</span></label>
+                <div class="stone-input-wrap">
+                  <span class="input-glyph">𓅓</span>
                   <input type="email" id="email" name="email" placeholder="yamada@example.com" required>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="subject">件名</label>
-                <div class="input-wrapper">
-                  <i class="fa-solid fa-tag"></i>
-                  <input type="text" id="subject" name="subject" placeholder="制作のご相談について">
+              <div class="form-row">
+                <label for="subject">伝令の表題 (Subject)</label>
+                <div class="stone-input-wrap">
+                  <span class="input-glyph">𓍯</span>
+                  <input type="text" id="subject" name="subject" placeholder="新しきプロジェクトのご相談">
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="message">メッセージ本文 <span class="required">*</span></label>
-                <div class="input-wrapper textarea-wrapper">
-                  <i class="fa-regular fa-comment-dots"></i>
-                  <textarea id="message" name="message" rows="5" placeholder="お気軽にご記入ください..." required></textarea>
+              <div class="form-row">
+                <label for="message">託されし言の葉 (Message) <span class="required">*</span></label>
+                <div class="stone-input-wrap textarea-wrap">
+                  <span class="input-glyph">𓌃</span>
+                  <textarea id="message" name="message" rows="5" placeholder="神殿の書記官へ伝えたい言葉をお書きください..." required></textarea>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submit-btn">
-                <span>送信する</span>
-                <i class="fa-solid fa-paper-plane"></i>
+              <button type="submit" class="btn btn-egypt-gold btn-block" id="submit-btn">
+                <span>☥ 伝令をナイルの風に乗せて放つ ☥</span>
               </button>
 
               <div id="form-alert" class="form-alert" style="display: none;"></div>
@@ -718,34 +836,18 @@
     </section>
   </main>
 
-  <!-- フッター -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <a href="#hero" class="logo">
-          <span class="logo-mark"><i class="fa-solid fa-seedling"></i></span>
-          <span class="logo-text">Portfolio<span class="dot">.</span></span>
-        </a>
-        <p class="footer-copy">Clean & Fresh Digital Creation Portfolio.</p>
-      </div>
-
-      <ul class="footer-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Yoshika Fukuyama. All rights reserved.</p>
-      </div>
+  <!-- 最下部フッター（神殿の土台） -->
+  <footer class="temple-footer">
+    <div class="container footer-content">
+      <div class="footer-ankh">☥ 𓋹 𓂀 𓆃 ☥</div>
+      <p class="footer-scribe">Written upon Papyrus & Digital Stone by Yoshika Fukuyama</p>
+      <p class="footer-sub">&copy; <span id="year"></span> Yoshika Fukuyama. May your life be endowed with Ankh, Udjat, and Seneb (生命・健全・健康).</p>
     </div>
   </footer>
 
-  <!-- ページトップ戻るボタン -->
-  <button id="back-to-top" class="back-to-top" aria-label="トップに戻る">
-    <i class="fa-solid fa-arrow-up"></i>
+  <!-- ページトップ戻るボタン（スカラベ/オベリスク） -->
+  <button id="back-to-top" class="back-to-top egypt-top-btn" aria-label="神殿の頂へ戻る" title="頂へ昇る">
+    <span>𓆃</span>
   </button>
 
   <!-- JavaScript -->
