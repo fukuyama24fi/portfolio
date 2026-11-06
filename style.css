@@ -484,7 +484,19 @@ body.dark-theme .ancient-mural-tableau {
 .hieroglyph-sub {
   font-size: 0.95rem;
   color: var(--text-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+/* 見出し下のヒエログリフ装飾行 */
+.section-hieroglyphs {
+  font-size: 1.25rem;
+  letter-spacing: 0.7em;
+  color: var(--gold);
+  margin-top: 10px;
+  opacity: 0.85;
+  user-select: none;
+  text-shadow: 0 0 10px var(--gold-glow);
 }
 
 .gold-gradient-text {

@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const origText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>𓆃 ナイルの風が伝令を運んでいます... 𓆃</span>';
+      submitBtn.innerHTML = '<span>𓆃 メッセージを送信しています... 𓆃</span>';
 
       setTimeout(() => {
         submitBtn.disabled = false;
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (formAlert) {
           formAlert.className = 'form-alert success';
-          formAlert.innerHTML = '☥ 言の葉は無事に書記官へ託されました。心より感謝を捧げます（Ankh, Udjat, Seneb）。';
+          formAlert.innerHTML = '☥ お問い合わせありがとうございます。メッセージを正常に送信いたしました。';
           formAlert.style.display = 'block';
 
           contactForm.reset();
